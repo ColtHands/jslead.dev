@@ -28,8 +28,8 @@ const props = defineProps<Props>()
     justify-content: space-between
     h3
         letter-spacing: -1px
-        font-size: 24px
-        line-height: 1.5
+        font-size: 1.5rem
+        line-height: 2rem
         font-weight: 700
     p
         @include variables.blogText

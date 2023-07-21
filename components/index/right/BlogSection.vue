@@ -1,11 +1,6 @@
 <template>
     <section>
-        <h2>
-            <NuxtLink to="/blog">
-                <UiFlippingText text="Blog" />
-            </NuxtLink>
-        </h2>
-
+        <IndexRightBlogSectionHeader />
         <ContentQuery v-slot="{ data }" :path="'/blog/articles'">
             <div v-for="(post, i) in sortBlogPostsByDate(data)" :key="i">
                 <hr>
@@ -28,15 +23,6 @@ section
         overflow: auto
     hr
         border: 1px solid var(--gray-default)
-    a
-        color: black
-        p
-                display: inline-block
-    h2
-        font-weight: 700
-        text-transform: uppercase
-        text-align: right
-        font-size: 40px
+    a p
         display: inline-block
-        width: 100%
 </style>
