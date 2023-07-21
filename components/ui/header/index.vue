@@ -1,0 +1,87 @@
+<template>
+    <header id="header">
+        <div id="logo">
+            <NuxtLink to="/">
+                ColtHands
+            </NuxtLink>
+        </div>
+        <div id="menu">
+            <NuxtLink
+                v-if="shouldDisplayPortfolioLink"
+                id="portfolio-link"
+                target="_blank"
+                to="https://www.notion.so/colthands/40e6bfd11ad34fabaa870fed6d77fc0e?v=6562fb2100234cbaaa208af798be2c70"
+            >
+                Portfolio
+            </NuxtLink>
+            <NuxtLink target="_blank" to="https://twitter.com/0xColtHands">
+                <i class="fa-brands fa-twitter"></i>
+            </NuxtLink>
+            <NuxtLink target="_blank" to="https://github.com/ColtHands">
+                <i class="fa-brands fa-github"></i>
+            </NuxtLink>
+            <NuxtLink target="_blank" to="https://www.linkedin.com/in/aleksey-karpenko/">
+                <i class="fa-brands fa-linkedin"></i>
+            </NuxtLink>
+            <NuxtLink target="_blank" to="https://www.npmjs.com/~coldhands">
+                <i class="fa-brands fa-npm"></i>
+            </NuxtLink>
+        </div>
+    </header>
+</template>
+
+<script setup lang="ts">
+const { $posthogClient } = useNuxtApp()
+const shouldDisplayPortfolioLink = $posthogClient?.isFeatureEnabled('displayPortfolioLink')
+</script>
+
+<style lang="sass" scoped>
+$padding: 10px
+
+header#header
+    width: 100%
+    background: linear-gradient(270deg, #ffe4d6, #d5acf5)
+    height: 60px
+    padding: $padding $padding*2
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: 1px solid black
+    #menu
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: row
+        a
+            text-decoration: none
+            margin: 0 10px
+            font-weight: 500
+            display: flex
+            align-items: center
+            i
+                font-size: 22px
+    #logo
+        font-weight: 800
+        display: inline-block
+        position: relative
+        z-index: 1
+        margin-left: 10px
+        font-size: 20px
+        a
+            text-decoration: none
+        &::before
+            content: ''
+            width: 40px
+            height: 40px
+            position: absolute
+            border-radius: 100%
+            display: inline-block
+            vertical-align: middle
+            background-color: var(--orange)
+            z-index: -1
+            top: -5px
+            left: -12px
+    @media screen and (max-width: 480px)
+        #portfolio-link
+            display: none
+</style>

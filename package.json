@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "save": "git add . && git commit -m save && git push",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.4.3",
+    "@nuxt/devtools": "latest",
+    "@nuxt/test-utils": "^3.2.0",
+    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18",
+    "nuxt": "^3.6.0"
+  },
+  "dependencies": {
+    "@coldhands/eslint-config": "^2.0.51",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "posthog-js": "^1.57.3",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "sitemap": "^7.1.1",
+    "typescript": "latest"
+  }
+}
