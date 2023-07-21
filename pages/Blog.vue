@@ -14,15 +14,19 @@
 <style scoped lang="sass">
 @use '~~/styles/variables'
 
-.blog__posts
-    margin: 0 auto
-    max-width: 70ch
-
-.blog__posts__post
-    @include variables.blogText
-    border-bottom: 1.5px solid var(--gray-default)
-
-hr
-    border: 1px solid var(--gray-default)
-    margin-top: 0
+.blog
+    &__posts
+        margin: 0 auto
+        padding-top: 1rem
+        width: calc(100% - #{variables.$header-height})
+        max-height: calc(100vh - #{variables.$header-height})
+        overflow-y: scroll
+    &__posts__post
+        @include variables.blogText
+        max-width: 70ch
+        margin: 0 auto
+        border-bottom: 1.5px solid var(--gray-default)
+    hr
+        border: 1px solid var(--gray-default)
+        margin-top: 0
 </style>

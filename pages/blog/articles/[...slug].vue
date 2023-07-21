@@ -119,18 +119,17 @@ import { formatDate } from '@/utils/contentUtils'
         margin-left: 20px
     h2
         font-weight: 600
-        font-size: 32px
+        font-size: 2rem
         margin: 20px 0 10px
     h3
         font-weight: 600
-        font-size: 24px
+        font-size: 1.5rem
         margin: 20px 0 10px
     code
         background-color: var(--gray-lighter)
         border-radius: 5px
         padding: 2px 5px
         display: inline-block
-        font-size: 16px
         color: var(--code-highlight)
         margin: 1px 0
     pre
@@ -138,7 +137,6 @@ import { formatDate } from '@/utils/contentUtils'
         border-radius: 5px
         padding: 10px
         display: inline-block
-        font-size: 16px
         code
             background-color: var(--gray-lighter)
     table
@@ -161,6 +159,7 @@ import { formatDate } from '@/utils/contentUtils'
         margin: 5px auto
         width: 100%
         height: auto
+        border-radius: 5px
     div.ARIA-Roles > table
         th, td
             &:nth-child(2), &:nth-child(3), &:nth-child(4)

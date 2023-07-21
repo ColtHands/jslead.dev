@@ -42,6 +42,7 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     background: var(--background);
     color: black;
+    overflow: hidden;
 }
 
 h1,

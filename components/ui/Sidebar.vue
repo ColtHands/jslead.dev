@@ -14,12 +14,11 @@ defineProps<{ title: string }>()
     vertical-align: top
     height: var(--body-height-minus-header)
     position: relative
-    width: 80px
+    width: 5rem
     border-right: 1px solid black
-    // background-color: var(--white)
     background: linear-gradient(0deg, #ffe4d6, #d5acf5)
     p
-        font-size: 60px
+        font-size: 3.75rem
         font-weight: 500
         text-transform: uppercase
         white-space: nowrap

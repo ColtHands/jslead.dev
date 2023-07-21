@@ -19,8 +19,7 @@ button
     box-shadow: 4px 4px 0 0 var(--gray-default)
     cursor: pointer
     background-color: var(--white)
-    font-size: 16px
-    font-weight: 700
+    font-weight: 800
     text-transform: uppercase
     position: relative
     &::after
@@ -53,4 +52,5 @@ button
         display: flex
         justify-content: center
         align-items: center
+        font-size: 1.25em
 </style>
