@@ -11,21 +11,18 @@
     </div>
 </template>
 
-<style scoped>
-.blog__posts {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px 0;
-}
+<style scoped lang="sass">
+.blog__posts
+    margin: 0 auto
+    max-width: 70ch
 
-.blog__posts__post {
-    padding: 10px;
-    border-bottom: 1.5px solid var(--gray-default);
+.blog__posts__post
+    font-weight: 500
+    line-height: 1.5rem
+    padding: 1em
+    border-bottom: 1.5px solid var(--gray-default)
 
-}
-
-hr {
-    border: 1px solid var(--gray-default);
-    margin-top: 0;
-}
+hr
+    border: 1px solid var(--gray-default)
+    margin-top: 0
 </style>
