@@ -36,6 +36,8 @@ import { formatDate } from '@/utils/contentUtils'
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 .blog-post-single
     display: flex
     flex-direction: column
@@ -46,7 +48,7 @@ import { formatDate } from '@/utils/contentUtils'
     &-share
         border-top: 3px solid var(--orange)
         padding: 10px
-        margin-top: 30px
+        margin-top: 2em
         margin-bottom: 10px
         gap: 20px
         display: flex
@@ -55,7 +57,7 @@ import { formatDate } from '@/utils/contentUtils'
             display: none
     &-content
         margin: 0 auto
-        max-width: 960px
+        max-width: 70ch
         @media screen and (max-width: 1024px)
             padding: 0 20px
             width: 800px
@@ -107,10 +109,7 @@ import { formatDate } from '@/utils/contentUtils'
     p
         margin: 10px 0
     p, li
-        font-size: 16px
-        line-height: 18px
-        font-weight: 500
-        letter-spacing: 0.2px
+        @include variables.blogText
     ul, ol
         margin-top: 5px
     ul > li,

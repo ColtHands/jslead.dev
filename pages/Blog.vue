@@ -12,14 +12,14 @@
 </template>
 
 <style scoped lang="sass">
+@use '~~/styles/variables'
+
 .blog__posts
     margin: 0 auto
     max-width: 70ch
 
 .blog__posts__post
-    font-weight: 500
-    line-height: 1.5rem
-    padding: 1em
+    @include variables.blogText
     border-bottom: 1.5px solid var(--gray-default)
 
 hr

@@ -20,6 +20,8 @@ const props = defineProps<Props>()
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 .blog-post
     display: flex
     flex-direction: column
@@ -30,9 +32,7 @@ const props = defineProps<Props>()
         line-height: 1.5
         font-weight: 700
     p
-        font-size: 16px
-        line-height: 1.5
-        font-weight: 500
+        @include variables.blogText
     p, a
         margin: 10px 0
     button
