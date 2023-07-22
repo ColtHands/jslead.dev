@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "forceConsistentCasingInFileNames": true,
-        "types": ["jest"]
+        "types": ["vitest/globals"]
     },
     "extends": "./.nuxt/tsconfig.json"
 }

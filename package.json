@@ -7,7 +7,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "save": "git add . && git commit -m save && git push",
-    "test": "jest",
+    "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "sitemap": "^7.1.1",
-    "typescript": "latest"
+    "typescript": "latest",
+    "vitest": "^0.33.0"
   }
 }
