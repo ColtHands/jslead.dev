@@ -1,10 +1,6 @@
 <template>
     <header id="header">
-        <div id="logo">
-            <NuxtLink to="/">
-                ColtHands
-            </NuxtLink>
-        </div>
+        <UiHeaderLogo />
         <div id="menu">
             <NuxtLink
                 v-if="shouldDisplayPortfolioLink"
@@ -59,28 +55,7 @@ header#header
             display: flex
             align-items: center
             i
-                font-size: 22px
-    #logo
-        font-weight: 800
-        display: inline-block
-        position: relative
-        z-index: 1
-        margin-left: 10px
-        font-size: 20px
-        a
-            text-decoration: none
-        &::before
-            content: ''
-            width: 40px
-            height: 40px
-            position: absolute
-            border-radius: 100%
-            display: inline-block
-            vertical-align: middle
-            background-color: var(--orange)
-            z-index: -1
-            top: -5px
-            left: -12px
+                font-size: 1.5rem
     @media screen and (max-width: 480px)
         #portfolio-link
             display: none
