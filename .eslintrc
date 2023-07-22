@@ -1,19 +1,10 @@
 {
     "root": true,
     "extends": [
-        "plugin:nuxt/recommended",
+        "@nuxt/eslint-config",
+        "@nuxtjs/eslint-config-typescript",
         "@coldhands/eslint-config"
     ],
-    "globals": {
-        "useHead": true,
-        "useContent": true,
-        "useAsyncData": true,
-        "queryContent": true,
-        "useMeta": true,
-        "definePageMeta": true,
-        "useRoute": true,
-        "useNuxtApp": true
-    },
     "rules": {
         "vue/html-self-closing": "off"
     }

@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+    typescript: {
+        strict: true
+    },
     routeRules: {
         '/blog/**': { swr: true }
     },
