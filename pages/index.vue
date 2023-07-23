@@ -2,8 +2,12 @@
     <main>
         <div class="left-section">
             <section class="section1">
-                <UiFlippingText text="Aleksei &nbsp; Karpenko" />
-                <UiFlippingText text="JavaScript &nbsp; Engineer" />
+                <h1>
+                    <UiFlippingText text="Aleksei &nbsp; Karpenko" />
+                </h1>
+                <h2>
+                    <UiFlippingText text="JavaScript &nbsp; Engineer" />
+                </h2>
                 <div class="intro">
                     <b>Hey there</b>.
                     I've created this website to capture my thoughts and display my opinions to the public.
@@ -102,6 +106,17 @@ main
                 height: auto
                 div.intro
                     margin-top: 20px
+    h1, h2
+        margin: 0
+        font-weight: 700
+        letter-spacing: -1.8px
+        text-transform: uppercase
+    h1
+        line-height: 3rem
+        font-size: clamp(2rem, 4.5vw, 3.75rem)
+        margin-left: 0
+    h2
+        font-size: clamp(1.5rem, 3vw, 1.875rem)
     .left-section
         display: flex
         flex-direction: column
@@ -113,16 +128,7 @@ main
         display: flex
         align-content: center
         flex-direction: column
-        p
-            margin: 0
-            font-weight: 700
-            letter-spacing: -2px
-            text-transform: uppercase
-            &:first-child
-                margin-left: 0
-                font-size: 60px
-            &:nth-child(2)
-                font-size: 30px
+                
         div.intro
             font-weight: 500
             margin-top: auto
