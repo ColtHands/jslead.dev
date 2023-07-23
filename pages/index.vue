@@ -16,7 +16,7 @@
                 </div>
             </section>
             <section class="section4">
-                <div class="section4__left">
+                <div class="section4__left" v-if="displayIndexCircles">
                     <div>
                         <UiCircle :size="80" />
                         <UiCircle :size="80" />
@@ -27,7 +27,7 @@
                         <UiCircle :size="80" />
                     </div>
                 </div>
-                <div class="section4__right">
+                <div class="section4__right" v-if="displayIndexCircles">
                     <div>
                         <UiCircle :size="40" />
                     </div>
@@ -87,6 +87,11 @@
         <IndexRightBlogSection class="right-section" />
     </main>
 </template>
+
+<script lang="ts" setup>
+const { $posthogClient } = useNuxtApp()
+const displayIndexCircles = $posthogClient?.isFeatureEnabled('displayIndexCircles')
+</script>
 
 <style lang="sass" scoped>
 @use '~~/styles/variables'
