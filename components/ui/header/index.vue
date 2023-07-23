@@ -32,12 +32,14 @@ const shouldDisplayPortfolioLink = $posthogClient?.isFeatureEnabled('displayPort
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 $padding: 10px
 
 header#header
     width: 100%
     background: linear-gradient(270deg, #ffe4d6, #d5acf5)
-    height: 60px
+    height: variables.$header-height
     padding: $padding $padding*2
     display: flex
     align-items: center

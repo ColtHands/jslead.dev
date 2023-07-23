@@ -67,7 +67,7 @@ import { formatDate } from '@/utils/contentUtils'
         h1
             font-size: 44px
             font-weight: 600
-            margin: 30px 0 20px
+            margin: 30px 0 0
             letter-spacing: -1px
         .date
             font-style: italic

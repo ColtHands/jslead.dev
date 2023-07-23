@@ -61,10 +61,10 @@ a {
 }
 
 pre {
-    white-space: -o-pre-wrapp;
+    white-space: -o-pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
-    white-space: pre-wrapp;
+    white-space: pre-wrap;
     word-wrap: break-word;
 }
 </style>

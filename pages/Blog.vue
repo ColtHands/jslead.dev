@@ -16,13 +16,14 @@
 
 .blog
     &__posts
-        margin: 0 auto
-        padding-top: 1rem
-        width: calc(100% - #{variables.$header-height})
+        margin: 0
+        width: auto
+        box-sizing: content-box-box
         max-height: calc(100vh - #{variables.$header-height})
         overflow-y: scroll
     &__posts__post
         @include variables.blogText
+        padding: 1rem 0
         max-width: 70ch
         margin: 0 auto
         border-bottom: 1.5px solid var(--gray-default)

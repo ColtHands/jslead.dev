@@ -13,7 +13,7 @@
     position: relative
     z-index: 1
     margin-left: 10px
-    font-size: 1.25rem
+    font-size: 1.5rem
     a
         text-decoration: none
     &::before
@@ -27,5 +27,5 @@
         background-color: var(--orange)
         z-index: -1
         top: -5px
-        left: -12px
+        left: -0.65em
 </style>

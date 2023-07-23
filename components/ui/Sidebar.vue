@@ -9,12 +9,14 @@ defineProps<{ title: string }>()
 </script>
 
 <style lang="sass">
+@use '~~/styles/variables'
+
 .sidebar
     float: left
     vertical-align: top
     height: var(--body-height-minus-header)
     position: relative
-    width: 5rem
+    width: variables.$sidebar-width
     border-right: 1px solid black
     background: linear-gradient(0deg, #ffe4d6, #d5acf5)
     p
