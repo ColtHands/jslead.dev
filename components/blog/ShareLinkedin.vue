@@ -1,13 +1,9 @@
 <template>
-    <a
-        class="linkedin-share-button"
-        :href="linkedinShareUrl"
-        data-size="large"
-        target="_blank"
-    >
-        <i class="fa-brands fa-linkedin"></i>
-        Share Via Linkedin
-    </a>
+    <UiShareLink
+        title="Share Via Linkedin"
+        :url="linkedinShareUrl"
+        icon="fa-linkedin"
+    />
 </template>
 
 <script setup lang="ts">

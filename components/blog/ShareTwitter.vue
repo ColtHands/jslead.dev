@@ -1,13 +1,9 @@
 <template>
-    <a
-        class="twitter-share-button"
-        :href="twitterURL"
-        data-size="large"
-        target="_blank"
-    >
-        <i class="fa-brands fa-twitter"></i>
-        Share Via Twitter
-    </a>
+    <UiShareLink
+        title="Share via twitter"
+        :url="twitterURL"
+        icon="fa-twitter"
+    />
 </template>
 
 <script lang="ts" setup>
