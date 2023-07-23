@@ -26,6 +26,6 @@
         vertical-align: middle
         background-color: var(--orange)
         z-index: -1
-        top: -5px
+        top: -0.4em
         left: -0.65em
 </style>
