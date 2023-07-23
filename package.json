@@ -15,7 +15,6 @@
     "@nuxt/devtools": "latest",
     "@nuxt/test-utils": "^3.2.0",
     "@nuxtjs/color-mode": "^3.2.0",
-    "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18",
     "nuxt": "^3.6.0"
   },
