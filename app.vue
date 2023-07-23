@@ -22,28 +22,26 @@ useHead({
 })
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+<style lang="sass">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap")
 
-:root {
-    --gray300: #8D8D8D;
-    --background: #9791a2;
-    --gray-default: #262625;
-    --gray-lighter: #363632;
-    --orange: #933929;
-    --code-highlight: #cf9825;
-    --white: hsl(264deg 7.41% 74.49%);
-    --body-height-minus-header: calc(100vh - 61px);
-}
+:root
+    --gray300: #8D8D8D
+    --background: #9791a2
+    --gray-default: #262625
+    --gray-lighter: #363632
+    --orange: #933929
+    --code-highlight: #cf9825
+    --white: hsl(264deg 7.41% 74.49%)
+    --body-height-minus-header: calc(100vh - 61px)
 
-html, body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--background);
-    color: black;
-    overflow: hidden;
-}
+html, body
+    padding: 0
+    margin: 0
+    font-family: 'Montserrat', sans-serif
+    background: var(--background)
+    color: black
+    overflow: hidden
 
 h1,
 h2,
@@ -51,20 +49,17 @@ h3,
 p,
 ul,
 ol,
-pre {
-    margin: 0;
-    padding: 0;
-}
+pre
+    margin: 0
+    padding: 0
 
-a {
-    color: black;
-}
+a
+    color: black
 
-pre {
-    white-space: -o-pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
+pre
+    white-space: -o-pre-wrap
+    white-space: -moz-pre-wrap
+    white-space: -pre-wrap
+    white-space: pre-wrap
+    word-wrap: break-word
 </style>
