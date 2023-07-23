@@ -23,6 +23,7 @@ useHead({
 </script>
 
 <style lang="sass">
+@use '~~/styles/variables'
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap")
 
 :root
@@ -33,7 +34,7 @@ useHead({
     --orange: #933929
     --code-highlight: #cf9825
     --white: hsl(264deg 7.41% 74.49%)
-    --body-height-minus-header: calc(100vh - 61px)
+    --body-height-minus-header: calc(100vh - #{variables.$header-height})
 
 html, body
     padding: 0
