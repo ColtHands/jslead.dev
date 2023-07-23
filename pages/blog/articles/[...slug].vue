@@ -53,7 +53,7 @@ import { formatDate } from '@/utils/contentUtils'
         gap: 20px
         display: flex
     &-link
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: variables.$tablet-resolution)
             display: none
     &-content
         margin: 0 auto
@@ -61,7 +61,7 @@ import { formatDate } from '@/utils/contentUtils'
         @media screen and (max-width: 1024px)
             padding: 0 20px
             width: 800px
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: variables.$tablet-resolution)
             padding: 0 20px
             width: calc(100% - 40px)
         h1
@@ -163,7 +163,7 @@ import { formatDate } from '@/utils/contentUtils'
     div.ARIA-Roles > table
         th, td
             &:nth-child(2), &:nth-child(3), &:nth-child(4)
-                @media screen and (max-width: 768px)
+                @media screen and (max-width: variables.$tablet-resolution)
                     display: none
         td
             code

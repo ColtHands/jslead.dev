@@ -16,10 +16,12 @@ import { sortBlogPostsByDate } from '~~/utils/contentUtils'
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 section
     overflow-y: auto
     overflow-x: hidden
-    @media screen and (max-width: 768px)
+    @media screen and (max-width: variables.$tablet-resolution)
         overflow: auto
     hr
         border: 1px solid var(--gray-default)

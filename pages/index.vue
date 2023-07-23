@@ -85,11 +85,13 @@
 </template>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 main
     display: grid
     height: var(--body-height-minus-header)
     grid-template-columns: repeat(2, 1fr)
-    @media screen and (max-width: 768px)
+    @media screen and (max-width: variables.$tablet-resolution)
         height: auto
         grid-template-columns: 1fr
         .section4
