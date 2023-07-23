@@ -22,7 +22,8 @@ section
     overflow-y: auto
     overflow-x: hidden
     @media screen and (max-width: variables.$tablet-resolution)
-        overflow: auto
+        overflow: visible
+        height: 100%
     hr
         border: 1px solid var(--gray-default)
     a p

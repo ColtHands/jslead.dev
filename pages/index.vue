@@ -92,7 +92,7 @@ main
     height: var(--body-height-minus-header)
     grid-template-columns: repeat(2, 1fr)
     @media screen and (max-width: variables.$tablet-resolution)
-        height: auto
+        overflow-y: scroll
         grid-template-columns: 1fr
         .section4
             display: none
