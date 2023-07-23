@@ -35,6 +35,7 @@ const props = defineProps<Props>()
         @include variables.blogText
     p, a
         margin: 10px 0
+        text-decoration: none
     button
         margin-left: auto
         display: block

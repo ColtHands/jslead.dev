@@ -13,6 +13,7 @@ const props = defineProps<{ text: string }>()
 
 <style lang="sass" scoped>
 button
+    font-family: 'Montserrat', sans-serif
     padding: 6px 49px 6px 18px
     border: 1.5px solid var(--gray-default)
     border-radius: 2px
