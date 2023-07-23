@@ -103,7 +103,6 @@ main
     @media screen and (max-width: variables.$tablet-resolution)
         overflow-y: scroll
         grid-template-columns: 1fr
-        height: calc(var(--body-height-minus-header) - 20rem)
         .section4
             display: none
         section
