@@ -45,6 +45,7 @@ header#header
     align-items: center
     justify-content: space-between
     border-bottom: 1px solid black
+    box-sizing: border-box
     #menu
         display: flex
         align-items: center
