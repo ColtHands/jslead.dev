@@ -20,6 +20,7 @@
                             </li>
                         </ul>
                     </div>
+
                     <ContentRendererMarkdown :value="doc" class="md" />
                 </ContentRenderer>
                 <div class="blog-post-single-share">
@@ -90,6 +91,7 @@ import { formatDate } from '@/utils/contentUtils'
                 list-style: inside
                 border: 1px solid #333
                 li
+                    line-height: 1.5rem
                     a
                         color: #aeaeae
                         text-decoration: none
