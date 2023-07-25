@@ -5,7 +5,7 @@ date: 07.23.2023
 
 One of the problems I see developers have confusion with when structuring a Fullstack application - is how to align types between Backend and Frontend applications.
 
-Here I want to cover all of the possible ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation. There are **two** main cases to consider: When you'r Backend and Frontend use different programming languages. And when they both use the same language.
+Here I want to cover all of the possible ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation. There are **two** main cases to consider: When you'r Backend and Frontend use different programming languages. And when they both use the same language.   
 
 ## tRPC
 
@@ -29,13 +29,13 @@ Reusing types between tRPC server and client logic is dead simple (just take a l
     frameborder="0">
 </iframe>
 
-**Pros**:
+#### Pros
 
 * Easy to setup and use
 * Very seamless typing
 * Supports everything that you might need in a Fullstack application
 
-**Cons**:
+#### Cons
 
 * Abstractions are implicit and not obvious for a beginner
 * Best works within one repository as a single project, it's not trivial to split tRPC app in one server and multiple clients, but at that point you're better off just publishing your types to npm registry and using GraphQL.
@@ -48,11 +48,9 @@ What I mean by that is using `openapi-typescript` package to build types from yo
 
 Advantages here are that it's a _standard_, you can use **OpenAPI** with almost any programming language and it's a very coherent API design pattern which facilitates documenting API requirements, from Frontend perspective it's a step above just publishing types to your `npm` registry, it can be done automatically, and you would only have to maintain schemas.
 
-And those are the disadvantages as well, you either use this standard or you don't. Sprinkling it into your code wont really do any good unless your thoughtful about your API design choices (same as using Vue with jsx and with template component's in the same project, you can do it, but that'll just create confusion), plus you'll need to build types each time you update your schema on backend, this happening async might introduce bugs.
-
 1. Create OpenAPI schema
 
-```yml
+```yaml
 openapi: 3.0.3
 info:
   title: Sample Bookstore API
@@ -96,22 +94,9 @@ npx openapi-typescript ./example.yml --output ./types.d.ts
 import type { paths, components } from './types'
 ```
 
-## JSON Schema to TypeScript
+All those advantages are the disadvantages as well, you either use this standard or you don't. Sprinkling it into your code wont really do any good unless your thoughtful about your API design choices (same as using Vue with jsx and with template component's in the same project, you can do it, but that'll just create confusion), plus you'll need to build types each time you update your schema on backend, this happening async might introduce bugs.
 
-**Pros**:
-**Cons**:
-
-## GraphQL
-
-**Pros**:
-**Cons**:
-
-## Monorepo
-
-**Pros**:
-**Cons**:
-
-## Just use Jamstack and SSRs
+## Jamstack and SSR
 
 I will spare you details on [how Jamstack works](https://bejamas.io/blog/jamstack/) 🙃, but basically your application lives in the same project, each folder represents a different part of your application and types are reusable throughout.
 
@@ -142,19 +127,50 @@ my-project/
 └ vite.config.js
 ```
 
-Since their popularisation with [Jekyll](https://jekyllrb.com/) and [Gatsby.js](http://gatsbyjs.org/) static site generators became my personal go-to when I need to create a type-safe website very quickly, path-based routing, auto-imports, ability to render [Markdown](https://content.nuxtjs.org/) files to html without worrying about compilers are just sprinkle of features these frameworks have.
+Since their popularisation with [Jekyll](https://jekyllrb.com/) and [Gatsby.js](http://gatsbyjs.org/) static site generators became my personal go-to when I need to create a type-safe website very quickly, path-based routing, auto-imports, ability to render [Markdown](https://content.nuxtjs.org/) files to html without worrying about compilers are just a small portion of features these frameworks have.
 
 The only major con they have is that by design most of the SSR do not have a persistent server, so if you need to implement Websocket's, polling, cron jobs or any other long-running tasks I would highly discourage you from using them as you end up with a lot of hacks and workarounds. However it's really simple to make a database request, or a request to another API.
 
-Notable frameworks:
+#### Notable frameworks
 
 * [Next.js](https://nextjs.org/) - Is the GOAT atm, however a lot of other frameworks have it beat in performance, features, and DX.
 * [Nuxt.js](https://nuxt.com/) - My personal favourite out of all of the frameworks, it's a perfect balance between features, performance, stability, and DX.
 * [Svelte Kit](https://kit.svelte.dev/) - The rapidest of them all, it's a perfect choice for when you want to have fun, and have all the DX for yourself.
 
+#### Small example
+
+1. Type `HelloWorld` is defined in `./types.d.ts`
+2. This type is used in `./server/routes/hello.ts`
+3. And also used in `app.vue`
+
+<iframe
+    width="100%"
+    height="650"
+    style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius:5px;"
+    src="https://codesandbox.io/p/sandbox/green-star-q3flfh?file=%2Fapp.vue%3A6%2C53&embed=1"
+    allowfullscreen
+>
+</iframe>
+
 ## Fullstack frameworks
 
 <!-- Or a full stack framework like [Blitz.js](https://blitzjs.com/), or [t3.gg](https://create.t3.gg/), or [RedwoodJS](https://redwoodjs.com/), or  -->
+
+## JSON Schema
+
+**Pros**:
+**Cons**:
+
+## GraphQL
+
+**Pros**:
+**Cons**:
+
+## Monorepo
+
+If you're having a single repository for your Backend and Frontend applications (which could be more than two), you could just reuse types between all of them.
+
+With this approach you're spared the hassle of publishing types, you can just reuse them.
 
 ## Ending thoughts
 
