@@ -5,7 +5,7 @@ date: 07.23.2023
 
 One of the problems I see developers have confusion with when structuring a Fullstack application - is how to align types between Backend and Frontend applications.
 
-Here I want to cover all of the possible ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation. There are **two** main cases to consider: When you'r Backend and Frontend use different programming languages. And when they both use the same language.   
+Here I want to cover all of the possible ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation. There are **two** main cases to consider: When you'r Backend and Frontend use different programming languages. And when they both use the same language.
 
 ## tRPC
 
@@ -15,10 +15,36 @@ RPC - is short for "Remote Procedure Call". It is a way of calling functions on 
 
 Reusing types between tRPC server and client logic is dead simple (just take a look at [quickstart](https://trpc.io/docs/quickstart) on official docks):
 
-1. Create router
-2. Add your procedures
-3. Export **AppRouter** type from server `export type AppRouter = typeof appRouter;`
-4. Use that **AppRouter** type on client `import type { AppRouter } from '../server';`
+#### 1. Create router and export AppRouter type
+
+```ts
+// server.ts
+
+import { initTRPC, router } from '@trpc/server';
+
+export const t = initTRPC.create();
+export const router = t.router;
+
+export const appRouter = router({
+    // procedures
+});
+
+export type AppRouter = typeof appRouter;
+
+```
+
+#### 2. Use **AppRouter** type on client
+
+```ts
+// client.ts
+
+import { createTRPCProxyClient } from '@trpc/client';
+import type { AppRouter } from '../server';
+
+const trpc = createTRPCProxyClient<AppRouter>({});
+```
+
+#### Official example from tRPC docs
 
 <iframe
     loading="lazy"  
@@ -51,6 +77,8 @@ Advantages here are that it's a _standard_, you can use **OpenAPI** with almost 
 1. Create OpenAPI schema
 
 ```yaml
+# example.yml
+
 openapi: 3.0.3
 info:
   title: Sample Bookstore API
@@ -131,7 +159,7 @@ Since their popularisation with [Jekyll](https://jekyllrb.com/) and [Gatsby.js](
 
 The only major con they have is that by design most of the SSR do not have a persistent server, so if you need to implement Websocket's, polling, cron jobs or any other long-running tasks I would highly discourage you from using them as you end up with a lot of hacks and workarounds. However it's really simple to make a database request, or a request to another API.
 
-#### Notable frameworks
+#### Top frameworks
 
 * [Next.js](https://nextjs.org/) - Is the GOAT atm, however a lot of other frameworks have it beat in performance, features, and DX.
 * [Nuxt.js](https://nuxt.com/) - My personal favourite out of all of the frameworks, it's a perfect balance between features, performance, stability, and DX.
@@ -158,13 +186,7 @@ The only major con they have is that by design most of the SSR do not have a per
 
 ## JSON Schema
 
-**Pros**:
-**Cons**:
-
 ## GraphQL
-
-**Pros**:
-**Cons**:
 
 ## Monorepo
 
