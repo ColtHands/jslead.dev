@@ -1,5 +1,5 @@
 ---
-title: How to align types between Backend and Frontend
+title: How to align types between Backend and Frontend Typescript applications
 date: 07.23.2023
 ---
 
@@ -65,6 +65,62 @@ const trpc = createTRPCProxyClient<AppRouter>({});
 
 * Abstractions are implicit and not obvious for a beginner
 * Best works within one repository as a single project, it's not trivial to split tRPC app in one server and multiple clients, but at that point you're better off just publishing your types to npm registry and using GraphQL.
+
+## GraphQL
+
+Sharing types between Backend and Frontend that's using GraphQL is practically the same as using OpenAPI, you're using a `@graphql-codegen/cli` to build those `.graphql` schemas to types, and then using them in your Frontend application.
+
+We'll be using [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen), to generate types from `.graphql` schemas. There are [other ways](https://the-guild.dev/graphql/codegen/plugins/typescript/typescript) to build types, but my focus here on `.graphql` schemas, because they are language and framework agnostic and could be reused in any application regardless of programming language.
+
+1. Create GraphQL schema
+
+```graphql
+type Query {
+    hello: String,
+}
+```
+
+* Install dependencies
+
+```bash
+npm install -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-resolvers
+```
+
+* Init config
+
+```bash
+npx graphql-codegen init
+```
+
+* Script will ask you for a few inputs, here are the ones I used:
+
+```bash
+? What type of application are you building? Backend - API or server
+? Where is your schema?: (path or url) ./src/server/api/graphql/index.graphql
+? Pick plugins: TypeScript (required by other typescript plugins), TypeScript Resolvers (strongly typed resolve functions)
+? Where to write the output: src/generated/graphql.ts
+? Do you want to generate an introspection file? No
+? How to name the config file? codegen.ts
+? What script in package.json should run the codegen? codegen
+```
+
+With these inputs script will generate a `codegen.ts` file in your root directory, and a `codegen` script in your `package.json`.
+
+1. Run codegen
+
+```bash
+npm run codegen
+```
+
+5. Use types
+
+```ts
+import type { Query } from './generated/graphql'
+```
+
+With this approach we've built types for our Backend server, but that doesn't mean we can't serve our GraphQL schemas and build them on the Frontend as well.
+
+Other approach might be to build those types on server and then publish them to npm registry, and then use them in your Frontend application.
 
 ## OpenAPI
 
@@ -159,13 +215,13 @@ Since their popularisation with [Jekyll](https://jekyllrb.com/) and [Gatsby.js](
 
 The only major con they have is that by design most of the SSR do not have a persistent server, so if you need to implement Websocket's, polling, cron jobs or any other long-running tasks I would highly discourage you from using them as you end up with a lot of hacks and workarounds. However it's really simple to make a database request, or a request to another API.
 
-#### Top frameworks
+### Top frameworks
 
 * [Next.js](https://nextjs.org/) - Is the GOAT atm, however a lot of other frameworks have it beat in performance, features, and DX.
 * [Nuxt.js](https://nuxt.com/) - My personal favourite out of all of the frameworks, it's a perfect balance between features, performance, stability, and DX.
 * [Svelte Kit](https://kit.svelte.dev/) - The rapidest of them all, it's a perfect choice for when you want to have fun, and have all the DX for yourself.
 
-#### Small example
+### Small example
 
 1. Type `HelloWorld` is defined in `./types.d.ts`
 2. This type is used in `./server/routes/hello.ts`
@@ -180,13 +236,13 @@ The only major con they have is that by design most of the SSR do not have a per
 >
 </iframe>
 
-## Fullstack frameworks
-
-<!-- Or a full stack framework like [Blitz.js](https://blitzjs.com/), or [t3.gg](https://create.t3.gg/), or [RedwoodJS](https://redwoodjs.com/), or  -->
-
 ## JSON Schema
 
-## GraphQL
+This approach will utilize a json schema and [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript) package and will work just like examples above with OpenAPI or GraphQL: create a schema, install type-generator npm package, generate types, use them.
+
+A quick not on that Json schema has a robust ecosystem of [implementations](https://json-schema.org/implementations.html), one of them being an [online JSON to Typescript converter](https://app.quicktype.io/#l=schema).
+
+Main benefits here are that you might be using a service that you have little to no information about, or some legacy service where you need to type already existing API, but if you're starting a new application there are way better options to go about typing your applications.
 
 ## Monorepo
 
@@ -194,6 +250,14 @@ If you're having a single repository for your Backend and Frontend applications 
 
 With this approach you're spared the hassle of publishing types, you can just reuse them.
 
-## Ending thoughts
+## Notable mentions
 
-There are other _hardcore_ ways to align types between Backend and Frontend, like using [Protocol Buffers](https://developers.google.com/protocol-buffers) or [Apache Thrift](https://thrift.apache.org/), or even [gRPC](https://grpc.io/), or [FlatBuffers](https://google.github.io/flatbuffers/), or [Cap'n Proto](https://capnproto.org/). But I don't think they are worth the effort, unless you have a very specific use case.
+* [Blitz.js](https://blitzjs.com/)
+* [t3.gg](https://create.t3.gg/)
+* [RedwoodJS](https://redwoodjs.com/)
+* [qwik](https://github.com/BuilderIO/qwik)
+* [Protocol Buffers](https://developers.google.com/protocol-buffers)
+* [Apache Thrift](https://thrift.apache.org/)
+* [gRPC](https://grpc.io/)
+* [FlatBuffers](https://google.github.io/flatbuffers/)
+* [Cap'n Proto](https://capnproto.org)
