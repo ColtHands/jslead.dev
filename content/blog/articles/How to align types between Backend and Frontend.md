@@ -3,9 +3,9 @@ title: How to align types between Backend and Frontend Typescript applications
 date: 07.23.2023
 ---
 
-One of the problems I see developers have confusion with when structuring a Fullstack application - is how to align types between Backend and Frontend applications.
+One of the topics I see **TypeScript** developers have confusion with, when developing a Fullstack application - is how to align types between Backend and Frontend applications.
 
-Here I want to cover all of the possible ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation. There are **two** main cases to consider: When you'r Backend and Frontend use different programming languages. And when they both use the same language.
+Here I want to cover all of the common ways to do it, explain the pros and cons of each approach, and give you recommendation on which one to use in a specific situation.
 
 ## tRPC
 
@@ -15,7 +15,7 @@ RPC - is short for "Remote Procedure Call". It is a way of calling functions on 
 
 Reusing types between tRPC server and client logic is dead simple (just take a look at [quickstart](https://trpc.io/docs/quickstart) on official docks):
 
-#### 1. Create router and export AppRouter type
+**Create router and export AppRouter type**
 
 ```ts
 // server.ts
@@ -33,7 +33,7 @@ export type AppRouter = typeof appRouter;
 
 ```
 
-#### 2. Use **AppRouter** type on client
+**Use _AppRouter_ type on client**
 
 ```ts
 // client.ts
@@ -44,7 +44,7 @@ import type { AppRouter } from '../server';
 const trpc = createTRPCProxyClient<AppRouter>({});
 ```
 
-#### Official example from tRPC docs
+**Official example from tRPC docs**
 
 <iframe
     loading="lazy"  
@@ -55,24 +55,26 @@ const trpc = createTRPCProxyClient<AppRouter>({});
     frameborder="0">
 </iframe>
 
-#### Pros
+**Pros**
 
 * Easy to setup and use
 * Very seamless typing
 * Supports everything that you might need in a Fullstack application
 
-#### Cons
+**Cons**
 
 * Abstractions are implicit and not obvious for a beginner
-* Best works within one repository as a single project, it's not trivial to split tRPC app in one server and multiple clients, but at that point you're better off just publishing your types to npm registry and using GraphQL.
+* Best works within one repository as a single project, it's not trivial to split tRPC app in one server and multiple clients, but at that point you're better off just publishing your types to npm registry, or using GraphQL.
 
 ## GraphQL
 
-Sharing types between Backend and Frontend that's using GraphQL is practically the same as using OpenAPI, you're using a `@graphql-codegen/cli` to build those `.graphql` schemas to types, and then using them in your Frontend application.
+If you're developing an application in one single repository with GraphQL, I see no problem with sharing types.
 
-We'll be using [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen), to generate types from `.graphql` schemas. There are [other ways](https://the-guild.dev/graphql/codegen/plugins/typescript/typescript) to build types, but my focus here on `.graphql` schemas, because they are language and framework agnostic and could be reused in any application regardless of programming language.
+But, if your Backend and Frontend live in different repositories, sharing types between them will require usage of a [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen), to generate types from `.graphql` schemas
 
-1. Create GraphQL schema
+There are [other ways](https://the-guild.dev/graphql/codegen/plugins/typescript/typescript) to build types, but my focus here on `.graphql` schemas, because they are language and framework agnostic and could be reused in any application regardless of programming language.
+
+**Create GraphQL schema**
 
 ```graphql
 type Query {
@@ -80,19 +82,19 @@ type Query {
 }
 ```
 
-* Install dependencies
+**Install dependencies**
 
 ```bash
 npm install -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-resolvers
 ```
 
-* Init config
+**Init config**
 
 ```bash
 npx graphql-codegen init
 ```
 
-* Script will ask you for a few inputs, here are the ones I used:
+**Script will ask you for a few inputs, here are the ones I used:**
 
 ```bash
 ? What type of application are you building? Backend - API or server
@@ -106,13 +108,13 @@ npx graphql-codegen init
 
 With these inputs script will generate a `codegen.ts` file in your root directory, and a `codegen` script in your `package.json`.
 
-1. Run codegen
+**Run codegen**
 
 ```bash
 npm run codegen
 ```
 
-5. Use types
+**Use types**
 
 ```ts
 import type { Query } from './generated/graphql'
@@ -122,15 +124,21 @@ With this approach we've built types for our Backend server, but that doesn't me
 
 Other approach might be to build those types on server and then publish them to npm registry, and then use them in your Frontend application.
 
+### Notable Services or packages
+
+* [Apollo GraphQL](https://apollographql.com/) - Is the most popular GraphQL client, all in one package for building a complex application with a lot of data fetching, caching, and state management.
+* [The Guild](https://the-guild.dev/) - group of open-source developers that develop packages related to our topic here: [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) or [feTS](https://the-guild.dev/openapi/fets).
+* [Graphbase](https://grafbase.com/) - product that takes multiple data sources (PostgreSQL, MongoDB, Stripe, Wordpress, etc) and combines them into a single GraphQL API, it has OpenAPI connector. It has auth, edge deployments and typesafety with TypeScript out of the box.
+
 ## OpenAPI
 
 What I mean by that is using `openapi-typescript` package to build types from your OpenAPI schema, and then using those types in your Frontend application.
 
 [What is OpenAPI](https://www.openapis.org/what-is-openapi)? It's a language agnostic specification for describing HTTP APIs with `.json` or `.yaml`.
 
-Advantages here are that it's a _standard_, you can use **OpenAPI** with almost any programming language and it's a very coherent API design pattern which facilitates documenting API requirements, from Frontend perspective it's a step above just publishing types to your `npm` registry, it can be done automatically, and you would only have to maintain schemas.
+Advantages here are that it's a _specifiaction_, and you can use **OpenAPI** with almost any programming language which is a very explicit API design pattern that facilitates documenting API requirements. From Frontend perspective it's a step above just publishing types to your `npm` registry, it can be done automatically, and you would only have to maintain the schemas.
 
-1. Create OpenAPI schema
+**Create OpenAPI schema**
 
 ```yaml
 # example.yml
@@ -166,19 +174,19 @@ components:
         title: { type: string }
 ```
 
-2. Generate types
+**Generate types**
 
 ```bash
 npx openapi-typescript ./example.yml --output ./types.d.ts
 ```
 
-3. Use them
+**Use them**
 
 ```ts
 import type { paths, components } from './types'
 ```
 
-All those advantages are the disadvantages as well, you either use this standard or you don't. Sprinkling it into your code wont really do any good unless your thoughtful about your API design choices (same as using Vue with jsx and with template component's in the same project, you can do it, but that'll just create confusion), plus you'll need to build types each time you update your schema on backend, this happening async might introduce bugs.
+All those advantages are the disadvantages as well, you either use this standard or you don't. Sprinkling it into your code wont really do any good unless your thoughtful about your API design choices (same as using Vue with jsx and with template component's in the same project, you can do it, but that'll just create confusion), plus you'll need to build types each time you update your schema on backend, this happening async might introduce discrepancies between types.
 
 ## Jamstack and SSR
 
@@ -238,26 +246,29 @@ The only major con they have is that by design most of the SSR do not have a per
 
 ## JSON Schema
 
-This approach will utilize a json schema and [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript) package and will work just like examples above with OpenAPI or GraphQL: create a schema, install type-generator npm package, generate types, use them.
+This approach will utilize a json schema and package that will build that schema to types, we can take [json-schema-to-typescript](https://www.npmjs.com/package/json-schema-to-typescript) package and it works similarly to the examples above with OpenAPI or GraphQL: create a schema, install type-generator npm package, generate types, use them.
 
-A quick not on that Json schema has a robust ecosystem of [implementations](https://json-schema.org/implementations.html), one of them being an [online JSON to Typescript converter](https://app.quicktype.io/#l=schema).
+To be completely type-safe here however you would need validate your data against the schema on the server, build those to types and then use them on the client.
 
 Main benefits here are that you might be using a service that you have little to no information about, or some legacy service where you need to type already existing API, but if you're starting a new application there are way better options to go about typing your applications.
 
-## Monorepo
+A quick note on that Json schema has a robust ecosystem of [implementations](https://json-schema.org/implementations.html), one of them being an [online JSON to Typescript converter](https://app.quicktype.io/#l=schema).
 
-If you're having a single repository for your Backend and Frontend applications (which could be more than two), you could just reuse types between all of them.
+Another notable packages for the client-side validation are [yup](https://www.npmjs.com/package/yup), [zod](https://zod.dev/) and [suretype](https://github.com/grantila/suretype).
 
-With this approach you're spared the hassle of publishing types, you can just reuse them.
+## Ending thoughts
 
-## Notable mentions
+As you could see there are a lot of ways to share types between server and a client applications. All of the ones I've listed here have their own pros and cons, they all have their own specific ecosystem, meaning if you're using one, you are not really using the other.
 
-* [Blitz.js](https://blitzjs.com/)
-* [t3.gg](https://create.t3.gg/)
-* [RedwoodJS](https://redwoodjs.com/)
-* [qwik](https://github.com/BuilderIO/qwik)
-* [Protocol Buffers](https://developers.google.com/protocol-buffers)
-* [Apache Thrift](https://thrift.apache.org/)
-* [gRPC](https://grpc.io/)
-* [FlatBuffers](https://google.github.io/flatbuffers/)
-* [Cap'n Proto](https://capnproto.org)
+It really depends on the requirements of your application and what experience your team has with all of the technologies listed here.
+
+* If you don't know what kind of client you're going to have, will it be an SPA, or an SSR I would go with [tRPC](https://trpc.io/) because it bring end-to-end type-safety from the start and it will not limit your client side application.
+* If you know that your server will be minimal and will not need need any long-lived connections, or WebSockets the SSR framework is the way to go, it's the most simple and straightforward way to build a type-safe application.
+* If you're server is going to live separately from the client, or will have multiple clients, I would go with GraphQL, it has a very robust ecosystem, not to mention it's a standard that emphasizes type-safe API design and is supported by all of the popular programming languages today.
+
+### Notable libraries on the topic
+
+* [Blitz.js](https://blitzjs.com/) - fullstack toolkit for [Next.js](https://nextjs.org/) where you can import your server code directly into the frontend.
+* [t3.gg](https://create.t3.gg/) - is a web development stack including [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), Tailwind CSS, tRPC, Prisma and NextAuth
+* [RedwoodJS](https://redwoodjs.com/) - fullstack framework for building _startups_, it (and i quote) weaves together the best parts of [React](https://reactjs.org/), [GraphQL](https://graphql.org/), [Prisma](https://www.prisma.io/), [TypeScript](https://www.typescriptlang.org/), [Jest](https://jestjs.io/) and [StoryBook](https://storybook.js.org/)
+* [qwik](https://qwik.builder.io/) - a new, almost revolutionary approach for building web applications, it uses zero hydration technique to achieve insanely fast load times
