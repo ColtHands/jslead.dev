@@ -70,11 +70,12 @@ import { formatDate } from '@/utils/contentUtils'
             font-weight: 600
             margin: 30px 0 0
             letter-spacing: -1px
+            line-height: 3rem
         .date
             font-style: italic
             font-weight: 500
             color: #333
-            margin-bottom: 10px
+            margin: 10px 0
         .contents
             background-color: #333
             padding: 10px
