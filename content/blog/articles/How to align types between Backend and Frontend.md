@@ -1,6 +1,6 @@
 ---
 title: How to align types between Backend and Frontend Typescript applications
-date: 07.23.2023
+date: 07.30.2023
 ---
 
 One of the topics I see **TypeScript** developers have confusion with, when developing a Fullstack application - is how to align types between Backend and Frontend applications.
