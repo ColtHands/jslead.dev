@@ -36,14 +36,16 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 div
     display: inline-block
     border-radius: 100%
     z-index: 0
     vertical-align: top
     transition: all 0.5s ease-in-out
-    background-color: var(--white)
+    background-color: variables.$white
     .animate
         transform: rotateY(180deg)
-        background-color: var(--orange)
+        background-color: variables.$orange
 </style>

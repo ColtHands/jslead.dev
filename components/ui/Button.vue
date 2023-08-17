@@ -12,14 +12,16 @@ const props = defineProps<{ text: string }>()
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 button
     font-family: 'Montserrat', sans-serif
     padding: 6px 49px 6px 18px
-    border: 1.5px solid var(--gray-default)
+    border: 1.5px solid variables.$gray-default
     border-radius: 2px
-    box-shadow: 4px 4px 0 0 var(--gray-default)
+    box-shadow: 4px 4px 0 0 variables.$gray-default
     cursor: pointer
-    background-color: var(--white)
+    background-color: variables.$white
     font-weight: 800
     text-transform: uppercase
     position: relative
@@ -38,7 +40,7 @@ button
     &:active
         box-shadow: none
         transform: translate(4px, 4px)
-        box-shadow: inset 0 0 0px 0px var(--gray-default)
+        box-shadow: inset 0 0 0px 0px variables.$gray-default
         &::after
             box-shadow: none
             border: none
@@ -48,7 +50,7 @@ button
         position: absolute
         right: 0
         top: 0
-        background: var(--orange)
+        background: variables.$orange
         font-weight: 800
         display: flex
         justify-content: center

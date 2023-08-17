@@ -6,7 +6,9 @@
     </div>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
+@use '~~/styles/variables'
+
 #logo
     font-weight: 800
     display: inline-block
@@ -24,7 +26,7 @@
         border-radius: 100%
         display: inline-block
         vertical-align: middle
-        background-color: var(--orange)
+        background-color: variables.$orange
         z-index: -1
         top: -0.4em
         left: -0.65em

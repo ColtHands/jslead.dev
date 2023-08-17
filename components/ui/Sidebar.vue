@@ -8,17 +8,17 @@
 defineProps<{ title: string }>()
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @use '~~/styles/variables'
 
 .sidebar
     float: left
     vertical-align: top
-    height: var(--body-height-minus-header)
     position: relative
     width: variables.$sidebar-width
     border-right: 1px solid black
     background: linear-gradient(0deg, #ffe4d6, #d5acf5)
+    @include variables.scrollableBodyHeight
     p
         font-size: 3.75rem
         font-weight: 500

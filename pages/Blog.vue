@@ -11,7 +11,7 @@
     </div>
 </template>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
 @use '~~/styles/variables'
 
 .blog
@@ -26,8 +26,8 @@
         padding: 1rem 0
         max-width: 70ch
         margin: 0 auto
-        border-bottom: 1.5px solid var(--gray-default)
+        border-bottom: 1.5px solid variables.$gray-default
     hr
-        border: 1px solid var(--gray-default)
+        border: 1px solid variables.$gray-default
         margin-top: 0
 </style>

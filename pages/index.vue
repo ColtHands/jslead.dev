@@ -98,8 +98,8 @@ const displayIndexCircles = $posthogClient?.isFeatureEnabled('displayIndexCircle
 
 main
     display: grid
-    height: var(--body-height-minus-header)
     grid-template-columns: repeat(2, 1fr)
+    @include variables.scrollableBodyHeight
     @media screen and (max-width: variables.$tablet-resolution)
         overflow-y: scroll
         grid-template-columns: 1fr

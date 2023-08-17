@@ -43,11 +43,11 @@ import { formatDate } from '@/utils/contentUtils'
     display: flex
     flex-direction: column
     justify-content: space-between
-    max-height: var(--body-height-minus-header)
     overflow-x: hidden
     overflow-y: auto
+    @include variables.scrollableBodyHeight
     &-share
-        border-top: 3px solid var(--orange)
+        border-top: 3px solid variables.$orange
         padding: 10px
         margin-top: 2em
         margin-bottom: 10px
@@ -129,19 +129,19 @@ import { formatDate } from '@/utils/contentUtils'
         font-size: 1.5rem
         margin: 20px 0 10px
     code
-        background-color: var(--gray-lighter)
+        background-color: variables.$gray-lighter
         border-radius: 5px
         padding: 2px 5px
         display: inline-block
-        color: var(--code-highlight)
+        color: variables.$code-highlight
         margin: 1px 0
     pre
-        background-color: var(--gray-lighter)
+        background-color: variables.$gray-lighter
         border-radius: 5px
         padding: 10px
         display: inline-block
         code
-            background-color: var(--gray-lighter)
+            background-color: variables.$gray-lighter
     table
         margin: 0 auto
     table, th, td
@@ -173,5 +173,5 @@ import { formatDate } from '@/utils/contentUtils'
                 border-radius: 5px
                 padding: 2px 5px
                 font-size: 16px
-                color: var(--code-highlight)
+                color: variables.$code-highlight
 </style>

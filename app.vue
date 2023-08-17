@@ -27,21 +27,12 @@ useHead({
 <style lang="sass">
 @use '~~/styles/variables'
 
-:root
-    --gray300: #8D8D8D
-    --background: #9791a2
-    --gray-default: #262625
-    --gray-lighter: #363632
-    --orange: #933929
-    --code-highlight: #cf9825
-    --white: hsl(264deg 7.41% 74.49%)
-    --body-height-minus-header: calc(100vh - #{variables.$header-height})
 
 html, body
     padding: 0
     margin: 0
     font-family: 'Montserrat', sans-serif
-    background: var(--background)
+    background: variables.$background-color
     color: black
     overflow: hidden
 
