@@ -263,7 +263,7 @@ As you could see there are a lot of ways to share types between server and a cli
 It really depends on the requirements of your application and what experience your team has with all of the technologies listed here.
 
 * If you don't know what kind of client you're going to have, will it be an SPA, or an SSR I would go with [tRPC](https://trpc.io/) because it bring end-to-end type-safety from the start and it will not limit your client side application.
-* If you know that your server will be minimal and will not need need any long-lived connections, or WebSockets the SSR framework is the way to go, it's the most simple and straightforward way to build a type-safe application.
+* If you know that your server will be minimal and will not need any long-lived connections, or WebSockets the SSR framework is the way to go, it's the most simple and straightforward way to build a type-safe application.
 * If you're server is going to live separately from the client, or will have multiple clients, I would go with GraphQL, it has a very robust ecosystem, not to mention it's a standard that emphasizes type-safe API design and is supported by all of the popular programming languages today.
 
 ### Notable libraries on the topic
