@@ -18,7 +18,4 @@ $white: hsl(264deg 7.41% 74.49%)
 
 @mixin scrollableBodyHeight
     $body-height-minus-header: calc(100vh - #{$header-height})
-    $body-height-minus-header-mobile: calc(100vh - #{$header-height} - 3.75rem)
-    height: $body-height-minus-header-mobile
-    @media (min-width: $tablet-resolution)
-        height: $body-height-minus-header
+    height: $body-height-minus-header
