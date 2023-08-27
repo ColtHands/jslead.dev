@@ -16,9 +16,9 @@ defineProps<{ title: string }>()
     vertical-align: top
     position: relative
     width: variables.$sidebar-width
-    border-right: 1px solid black
-    background: linear-gradient(0deg, #ffe4d6, #d5acf5)
-    @include variables.scrollableBodyHeight
+    border-right: 1px solid variables.$white
+    background: variables.$background-color
+    height: variables.$body-height-minus-header
     p
         font-size: 3.75rem
         font-weight: 500

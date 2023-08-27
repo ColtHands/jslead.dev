@@ -3,19 +3,15 @@ $sidebar-width: 5rem
 
 $tablet-resolution: 768px
 
-$background-color: #9791a2
-$gray-default: #262625
-$gray-lighter: #363632
-$orange: #933929
-$code-highlight: #cf9825
-$white: hsl(264deg 7.41% 74.49%)
+$background-color: #A7BAB6
+$gray: #262625
+$orange: #f08222
+$white: #B9D4CF
+
+$body-height-minus-header: calc(100dvh - #{$header-height})
 
 @mixin blogText
     font-size: 1rem
     line-height: 1.4rem
     font-weight: 500
     letter-spacing: 0.2px
-
-@mixin scrollableBodyHeight
-    $body-height-minus-header: calc(100dvh - #{$header-height})
-    height: $body-height-minus-header

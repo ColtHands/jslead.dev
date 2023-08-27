@@ -25,7 +25,7 @@ section
         overflow: visible
         height: 100%
     hr
-        border: 1px solid variables.$gray-default
+        border: 1px solid variables.$white
     a p
         display: inline-block
 </style>

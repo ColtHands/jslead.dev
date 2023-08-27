@@ -45,7 +45,7 @@ import { formatDate } from '@/utils/contentUtils'
     justify-content: space-between
     overflow-x: hidden
     overflow-y: auto
-    @include variables.scrollableBodyHeight
+    height: variables.$body-height-minus-header
     &-share
         border-top: 3px solid variables.$orange
         padding: 10px
@@ -129,23 +129,23 @@ import { formatDate } from '@/utils/contentUtils'
         font-size: 1.5rem
         margin: 20px 0 10px
     code
-        background-color: variables.$gray-lighter
+        background-color: variables.$gray
         border-radius: 5px
         padding: 2px 5px
         display: inline-block
-        color: variables.$code-highlight
+        color: variables.$orange
         margin: 1px 0
     pre
-        background-color: variables.$gray-lighter
+        background-color: variables.$gray
         border-radius: 5px
         padding: 10px
         display: inline-block
         code
-            background-color: variables.$gray-lighter
+            background-color: variables.$gray
     table
         margin: 0 auto
     table, th, td
-        border: 1px solid black
+        border: 1px solid variables.$gray
         border-collapse: collapse
         thead
             th
@@ -173,5 +173,5 @@ import { formatDate } from '@/utils/contentUtils'
                 border-radius: 5px
                 padding: 2px 5px
                 font-size: 16px
-                color: variables.$code-highlight
+                color: variables.$orange
 </style>

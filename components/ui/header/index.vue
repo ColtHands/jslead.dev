@@ -1,6 +1,8 @@
 <template>
     <header id="header">
-        <UiHeaderLogo />
+        <NuxtLink to="/">
+            <UiHeaderLogo />
+        </NuxtLink>
         <div id="menu">
             <NuxtLink
                 v-if="shouldDisplayPortfolioLink"
@@ -38,13 +40,13 @@ $padding: 10px
 
 header#header
     width: 100%
-    background: linear-gradient(270deg, #ffe4d6, #d5acf5)
+    background: variables.$background-color
     height: variables.$header-height
     padding: $padding $padding*2
     display: flex
     align-items: center
     justify-content: space-between
-    border-bottom: 1px solid black
+    border-bottom: 1px solid variables.$white
     box-sizing: border-box
     #menu
         display: flex
@@ -59,6 +61,7 @@ header#header
             align-items: center
             i
                 font-size: 1.5rem
+                color: variables.$gray
     @media screen and (max-width: 480px)
         #portfolio-link
             display: none

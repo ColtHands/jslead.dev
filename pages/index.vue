@@ -99,7 +99,7 @@ const displayIndexCircles = $posthogClient?.isFeatureEnabled('displayIndexCircle
 main
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    @include variables.scrollableBodyHeight
+    height: variables.$body-height-minus-header
     @media screen and (max-width: variables.$tablet-resolution)
         overflow-y: scroll
         grid-template-columns: 1fr
@@ -125,7 +125,7 @@ main
         display: flex
         flex-direction: column
     section
-        border: 1px solid black
+        border: 1px solid variables.$white
         padding: 10px 20px
     .section1
         height: 50%

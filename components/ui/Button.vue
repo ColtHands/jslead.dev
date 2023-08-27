@@ -15,11 +15,11 @@ const props = defineProps<{ text: string }>()
 @use '~~/styles/variables'
 
 button
-    font-family: 'Montserrat', sans-serif
+    font-family: inherit
     padding: 6px 49px 6px 18px
-    border: 1.5px solid variables.$gray-default
+    border: 1.5px solid variables.$gray
     border-radius: 2px
-    box-shadow: 4px 4px 0 0 variables.$gray-default
+    box-shadow: 4px 4px 0 0 variables.$gray
     cursor: pointer
     background-color: variables.$white
     font-weight: 800
@@ -31,16 +31,16 @@ button
         height: calc(100% + 2px)
         position: absolute
         top: 3px
-        left: 3px
+        left: 3.5px
         transition: box-shadow 0.2s ease-in-out
-        border-right: 1.5px solid beige
-        border-bottom: 1.5px solid beige
+        border-right: 1.5px solid variables.$white
+        border-bottom: 1.5px solid variables.$white
         border-radius: 2px
         border-bottom-right-radius: 3px
     &:active
         box-shadow: none
         transform: translate(4px, 4px)
-        box-shadow: inset 0 0 0px 0px variables.$gray-default
+        box-shadow: inset 0 0 0px 0px variables.$gray
         &::after
             box-shadow: none
             border: none
