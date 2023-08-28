@@ -1,18 +1,20 @@
 <template>
     <section>
         <IndexRightBlogSectionHeader />
-        <ContentQuery v-slot="{ data }" :path="'/blog/articles'">
-            <div v-for="(post, i) in sortBlogPostsByDate(data)" :key="i">
-                <hr>
-                <IndexRightBlogPost :post="post" />
-            </div>
+        <div v-for="(post, i) in articles" :key="i">
             <hr>
-        </ContentQuery>
+            <IndexRightBlogPost :post="post" />
+        </div>
+        <hr>
     </section>
 </template>
 
 <script lang="ts" setup>
-import { sortBlogPostsByDate } from '~~/utils/contentUtils'
+import type { BlogPost } from '~~/utils/contentUtils'
+
+const articles = await queryContent<BlogPost>('/blog/articles')
+    .sort({ date: -1 })
+    .find()
 </script>
 
 <style lang="sass" scoped>

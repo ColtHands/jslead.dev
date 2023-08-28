@@ -1,13 +1,10 @@
 export type BlogPost = {
     date: string,
-    title?: string,
+    title: string,
     _path?: string,
     description?: string,
 }
 
-export function sortBlogPostsByDate(posts: BlogPost[]) {
-    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-}
 
 /**
  * @param {date} string - Date string in dd.mm.yyyy format

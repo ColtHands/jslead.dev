@@ -2,14 +2,20 @@
     <div>
         <UiSidebar title="Blog" class="blog__sidebar" />
         <div class="blog__posts">
-            <ContentQuery v-slot="{ data }" :path="'/blog/articles'">
-                <div v-for="(post, i) in sortBlogPostsByDate(data)" :key="i" class="blog__posts__post">
-                    <IndexRightBlogPost :post="post" />
-                </div>
-            </ContentQuery>
+            <div v-for="(post, i) in articles" :key="i" class="blog__posts__post">
+                <IndexRightBlogPost :post="post" />
+            </div>
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+import type { BlogPost } from '~~/utils/contentUtils'
+
+const articles = await queryContent<BlogPost>('/blog/articles')
+    .sort({ date: -1 })
+    .find()
+</script>
 
 <style lang="sass" scoped>
 @use '~~/styles/variables'
