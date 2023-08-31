@@ -1,6 +1,7 @@
 ---
 title: The curious case of Agents in AI, how to Auto GPT
 date: 04.17.2023
+visible: true
 ---
 
 In AI, an intelligent agent (IA) is an independent entity, a computer program, a system which perceives, observes and operates upon its environment, makes decisions, takes actions to achieve a usually predefined goal(s).

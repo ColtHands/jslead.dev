@@ -14,6 +14,7 @@ import type { BlogPost } from '~~/utils/contentUtils'
 
 const articles = await queryContent<BlogPost>('/blog/articles')
     .sort({ date: -1 })
+    .where({ visible: true })
     .find()
 </script>
 

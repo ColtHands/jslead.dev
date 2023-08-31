@@ -1,6 +1,7 @@
 ---
 title: Soft Skills To Pass Your Coding Interview
 date: 02.12.2023
+visible: true
 ---
 
 In this article, I'll try to go over some essential _"Soft Skills"_ for coding interviews. The way you communicate, but with your code.

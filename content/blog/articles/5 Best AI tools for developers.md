@@ -1,6 +1,7 @@
 ---
 title: 5 Best AI tools for developers
 date: 06.24.2023
+visible: true
 ---
 
 Recently, I see a lot of articles being posted about AI tools for developer. But it seems like majority of those are made not by developers themselves, but by writers, or marketers. Here I want to go over some AI tools that I or my colleagues use in day-to-day work.
