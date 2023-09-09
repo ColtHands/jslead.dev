@@ -27,7 +27,6 @@ useHead({
 <style lang="sass">
 @use '~~/styles/variables'
 
-
 html, body
     padding: 0
     margin: 0
@@ -55,4 +54,13 @@ pre
     white-space: -pre-wrap
     white-space: pre-wrap
     word-wrap: break-word
+
+.page-enter-active,
+.page-leave-active
+    transition: all 0.4s
+
+.page-enter-from,
+.page-leave-to
+    opacity: 0
+    transform: translateX(100px)
 </style>

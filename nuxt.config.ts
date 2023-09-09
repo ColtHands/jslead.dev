@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+    app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'default'
+        }
+    },
     typescript: {
         strict: true
     },
