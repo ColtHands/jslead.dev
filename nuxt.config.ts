@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+    modules: [
+        '@nuxt/content',
+        '@nuxtjs/color-mode',
+        'nuxt-simple-robots'
+    ],
+    devtools: { enabled: false },
     app: {
         pageTransition: {
             name: 'page',
@@ -11,11 +17,6 @@ export default defineNuxtConfig({
     routeRules: {
         '/blog/**': { swr: true }
     },
-    devtools: { enabled: false },
-    modules: [
-        '@nuxt/content',
-        '@nuxtjs/color-mode',
-    ],
     runtimeConfig: {
         public: {
             posthogPublicKey: 'phc_h4lVplILWIY7UlOfGIp9vjHlwHOA1697FEuiPAuwc2L',
