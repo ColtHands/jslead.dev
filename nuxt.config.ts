@@ -1,9 +1,13 @@
+const websiteUrl = 'https://colthands.dev'
+
 export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
         '@nuxtjs/color-mode',
-        'nuxt-simple-robots'
     ],
+    robots: {
+        allow: '/'
+    },
     devtools: { enabled: false },
     app: {
         pageTransition: {
@@ -20,7 +24,8 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             posthogPublicKey: 'phc_h4lVplILWIY7UlOfGIp9vjHlwHOA1697FEuiPAuwc2L',
-            posthogHost: 'https://app.posthog.com'
+            posthogHost: 'https://app.posthog.com',
+            websiteUrl
         }
     },
     content: {
