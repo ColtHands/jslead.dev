@@ -32,7 +32,7 @@
 const { $posthogClient } = useNuxtApp()
 const route = useRoute()
 const shouldDisplayPortfolioFromQuery = route.query.displayPortfolio === 'true'
-const shouldDisplayPortfolioLink = $posthogClient?.isFeatureEnabled('displayPortfolioLink') ?? shouldDisplayPortfolioFromQuery
+const shouldDisplayPortfolioLink = shouldDisplayPortfolioFromQuery ?? $posthogClient?.isFeatureEnabled('displayPortfolioLink')
 </script>
 
 <style lang="sass" scoped>
