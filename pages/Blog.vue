@@ -10,12 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { BlogPost } from '~~/utils/contentUtils'
-
-const articles = await queryContent<BlogPost>('/blog/articles')
-    .where({ visible: true })
-    .sort({ date: -1 })
-    .find()
+const articles = await useBlogArticles()
 </script>
 
 <style lang="sass" scoped>
@@ -27,7 +22,7 @@ const articles = await queryContent<BlogPost>('/blog/articles')
             display: none
     &__posts
         @media screen and (max-width: variables.$tablet-resolution)
-            padding: 1rem   
+            padding: 1rem
         margin: 0
         width: auto
         box-sizing: content-box-box

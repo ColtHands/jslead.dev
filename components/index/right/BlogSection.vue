@@ -10,12 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { BlogPost } from '~~/utils/contentUtils'
+const articles = await useBlogArticles()
 
-const articles = await queryContent<BlogPost>('/blog/articles')
-    .sort({ date: -1 })
-    .where({ visible: true })
-    .find()
+console.log(articles.map(e => e.date))
 </script>
 
 <style lang="sass" scoped>
