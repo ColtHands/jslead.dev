@@ -16,82 +16,11 @@
                 </div>
             </section>
             <section class="section4">
-                <div class="section4__left" v-if="displayIndexCircles">
-                    <div>
-                        <UiCircle :size="80" />
-                        <UiCircle :size="80" />
-                        <UiCircle :size="80" />
-                    </div>
-                    <div>
-                        <UiCircle :size="80" />
-                        <UiCircle :size="80" />
-                    </div>
-                </div>
-                <div class="section4__right" v-if="displayIndexCircles">
-                    <div>
-                        <UiCircle :size="40" />
-                    </div>
-                    <div>
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                    </div>
-                    <div>
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                    </div>
-                    <div>
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                    </div>
-                    <div>
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                    </div>
-                    <div>
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                        <UiCircle :size="25" />
-                    </div>
-                </div>
             </section>
         </div>
         <IndexRightBlogSection class="right-section" />
     </main>
 </template>
-
-<script lang="ts" setup>
-const { $posthogClient } = useNuxtApp()
-const displayIndexCircles = $posthogClient?.isFeatureEnabled('displayIndexCircles')
-</script>
 
 <style lang="sass" scoped>
 @use '~~/styles/variables'
@@ -132,7 +61,6 @@ main
         display: flex
         align-content: center
         flex-direction: column
-                
         div.intro
             font-weight: 500
             margin-top: auto
