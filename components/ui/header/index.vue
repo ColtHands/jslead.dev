@@ -12,7 +12,7 @@
             >
                 Portfolio
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://twitter.com/0xColtHands">
+            <NuxtLink target="_blank" to="https://twitter.com/JavaScriptLead">
                 <i class="fa-brands fa-twitter"></i>
             </NuxtLink>
             <NuxtLink target="_blank" to="https://github.com/ColtHands">

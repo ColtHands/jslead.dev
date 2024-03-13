@@ -273,5 +273,3 @@ It really depends on the requirements of your application and what experience yo
 * [t3.gg](https://create.t3.gg/) - is a web development stack including [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), Tailwind CSS, tRPC, Prisma and NextAuth
 * [RedwoodJS](https://redwoodjs.com/) - fullstack framework for building _startups_, it (and i quote) weaves together the best parts of [React](https://reactjs.org/), [GraphQL](https://graphql.org/), [Prisma](https://www.prisma.io/), [TypeScript](https://www.typescriptlang.org/), [Jest](https://jestjs.io/) and [StoryBook](https://storybook.js.org/)
 * [qwik](https://qwik.builder.io/) - a new, almost revolutionary approach for building web applications, it uses zero hydration technique to achieve insanely fast load times
-
-If you feel like I've missed a topic, or made a mistake, please, feel free to ping me on [twitter](https://twitter.com/0xColtHands).

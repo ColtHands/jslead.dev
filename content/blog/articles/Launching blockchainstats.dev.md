@@ -29,4 +29,4 @@ We all know bitcoin is number one. But did you know that for example that [hummi
 
 Ultimately this app can give you some additional info on a specific project regarding it's development, thus making better decisions when investing into that project whether that would be time, money or anything else.
 
-Also feel free to [tweet](https://twitter.com/0xColtHands) or [open an issue](https://github.com/ColtHands/blockchainstats.dev) with any ideas for improvements or any problems you may have with this app. 🙂
+Also feel free to [tweet](https://twitter.com/JavaScriptLead) or [open an issue](https://github.com/ColtHands/blockchainstats.dev) with any ideas for improvements or any problems you may have with this app. 🙂
