@@ -4,7 +4,7 @@
             <h3>{{props.post.title}}</h3>
         </NuxtLink>
         <p>{{props.post.description}}</p>
-        <NuxtLink :to="props.post._path">
+        <NuxtLink :to="props.post._path" style="display: inline-block;">
             <UiButton text="go to post" />
         </NuxtLink>
     </div>

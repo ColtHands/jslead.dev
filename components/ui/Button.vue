@@ -25,6 +25,7 @@ button
     font-weight: 800
     text-transform: uppercase
     position: relative
+    transition: all ease 100ms
     &::after
         content: ""
         width: calc(100% + 2px)
@@ -32,18 +33,16 @@ button
         position: absolute
         top: 3px
         left: 3.5px
-        transition: box-shadow 0.2s ease-in-out
         border-right: 1.5px solid variables.$white
         border-bottom: 1.5px solid variables.$white
         border-radius: 2px
         border-bottom-right-radius: 3px
+        transition-delay: 50ms
     &:active
-        box-shadow: none
         transform: translate(4px, 4px)
-        box-shadow: inset 0 0 0px 0px variables.$gray
+        box-shadow: 0px 0px 0px 0px variables.$gray
         &::after
-            box-shadow: none
-            border: none
+            border: 0px
     div.sq
         height: 100%
         width: 33px
