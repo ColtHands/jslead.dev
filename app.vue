@@ -8,7 +8,11 @@
 <script lang="ts" setup>
 useHead({
     title: 'Aleksei Karpenko - JavaScript Engineer',
+    htmlAttrs: {
+        lang: 'en'
+    },
     meta: [
+        { charset: 'utf-8' },
         { name: 'description', content: 'Aleksei Karpenko personal blog about Frontend trends, opinions, best-practices, patterns, management and leadership' }
     ],
     link: [
