@@ -8,7 +8,6 @@
         <i :class="['fa-brands', props.icon]"></i>
         <span>{{props.title}}</span>
     </a>
-    
 </template>
 
 <script lang="ts" setup>
