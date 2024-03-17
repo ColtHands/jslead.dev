@@ -2,7 +2,7 @@
     <UiShareLink
         title="Share Via Linkedin"
         :url="linkedinShareUrl"
-        icon="fa-linkedin"
+        icon="linkedin"
     />
 </template>
 

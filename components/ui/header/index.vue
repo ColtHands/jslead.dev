@@ -13,16 +13,16 @@
                 Portfolio
             </NuxtLink>
             <NuxtLink target="_blank" to="https://twitter.com/JavaScriptLead" aria-label="Twitter link icon">
-                <i class="fa-brands fa-x-twitter"></i>
+                <IconXTwitter />
             </NuxtLink>
             <NuxtLink target="_blank" to="https://github.com/ColtHands" aria-label="Github link icon">
-                <i class="fa-brands fa-github"></i>
+                <IconGithub />
             </NuxtLink>
             <NuxtLink target="_blank" to="https://www.linkedin.com/in/aleksey-karpenko/" aria-label="Linkedin link icon">
-                <i class="fa-brands fa-linkedin"></i>
+                <IconLinkedIn />
             </NuxtLink>
             <NuxtLink target="_blank" to="https://www.npmjs.com/~coldhands" aria-label="NPM link icon">
-                <i class="fa-brands fa-npm"></i>
+                <IconNpm />
             </NuxtLink>
         </div>
     </header>
@@ -59,11 +59,9 @@ header#header
             text-decoration: none
             margin: 0 10px
             font-weight: 500
-            display: flex
-            align-items: center
-            i
-                font-size: 1.5rem
-                color: variables.$gray
+            &:hover
+                svg
+                    fill: darken(variables.$orange, 20%)
     @media screen and (max-width: 480px)
         #portfolio-link
             display: none

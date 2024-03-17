@@ -5,7 +5,8 @@
         target="_blank"
         style="text-decoration: none"
     >
-        <i :class="['fa-brands', props.icon]"></i>
+        <IconXTwitter v-if="icon === 'twitter'" />
+        <IconXTwitter v-else-if="icon === 'linkedin'" />
         <span>{{props.title}}</span>
     </a>
 </template>
@@ -14,7 +15,7 @@
 type Props = {
     title: string
     url: string
-    icon: `fa-${string}`
+    icon: 'twitter' | 'linkedin'
 }
 const props = defineProps<Props>()
 </script>

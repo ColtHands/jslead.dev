@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@coldhands/eslint-config": "^2.2.0",
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@nuxthq/studio": "^1.0.10",
     "eslint": "^8.49.0",
     "posthog-js": "^1.57.3",

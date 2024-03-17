@@ -2,7 +2,7 @@
     <UiShareLink
         title="Share via twitter"
         :url="twitterURL"
-        icon="fa-twitter"
+        icon="twitter"
     />
 </template>
 
