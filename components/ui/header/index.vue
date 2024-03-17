@@ -1,6 +1,6 @@
 <template>
     <header id="header">
-        <NuxtLink to="/">
+        <NuxtLink to="/" aria-label="Main page link logo">
             <UiHeaderLogo />
         </NuxtLink>
         <div id="menu">
@@ -12,16 +12,16 @@
             >
                 Portfolio
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://twitter.com/JavaScriptLead">
+            <NuxtLink target="_blank" to="https://twitter.com/JavaScriptLead" aria-label="Twitter link icon">
                 <i class="fa-brands fa-x-twitter"></i>
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://github.com/ColtHands">
+            <NuxtLink target="_blank" to="https://github.com/ColtHands" aria-label="Github link icon">
                 <i class="fa-brands fa-github"></i>
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://www.linkedin.com/in/aleksey-karpenko/">
+            <NuxtLink target="_blank" to="https://www.linkedin.com/in/aleksey-karpenko/" aria-label="Linkedin link icon">
                 <i class="fa-brands fa-linkedin"></i>
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://www.npmjs.com/~coldhands">
+            <NuxtLink target="_blank" to="https://www.npmjs.com/~coldhands" aria-label="NPM link icon">
                 <i class="fa-brands fa-npm"></i>
             </NuxtLink>
         </div>
