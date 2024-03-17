@@ -11,8 +11,6 @@
 
 <script lang="ts" setup>
 const articles = await useBlogArticles()
-
-console.log(articles.map(e => e.date))
 </script>
 
 <style lang="sass" scoped>
