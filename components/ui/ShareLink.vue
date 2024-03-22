@@ -6,7 +6,7 @@
         style="text-decoration: none"
     >
         <IconXTwitter v-if="icon === 'twitter'" />
-        <IconXTwitter v-else-if="icon === 'linkedin'" />
+        <IconLinkedIn v-else-if="icon === 'linkedin'" />
         <span>{{props.title}}</span>
     </a>
 </template>
@@ -21,6 +21,6 @@ const props = defineProps<Props>()
 </script>
 
 <style lang="sass" scoped>
-i
-    margin-right: 5px
+    i
+        margin-right: 5px
 </style>
