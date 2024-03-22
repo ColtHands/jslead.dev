@@ -6,7 +6,7 @@
                     <UiFlippingText text="Aleksei &nbsp; Karpenko" />
                 </h1>
                 <h2>
-                    <UiFlippingText text="JavaScript &nbsp; Engineer" />
+                    <UiFlippingText text="Fullstack JavaScript &nbsp; Engineer" />
                 </h2>
                 <div class="intro">
                     <b>Hey there</b>.

@@ -61,7 +61,7 @@ header#header
             font-weight: 500
             &:hover
                 svg
-                    fill: darken(variables.$orange, 20%)
+                    fill: variables.$text-hover
     @media screen and (max-width: 480px)
         #portfolio-link
             display: none

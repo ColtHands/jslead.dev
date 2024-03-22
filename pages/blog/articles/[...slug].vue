@@ -2,6 +2,7 @@
     <NuxtLink to="/blog" class="blog-post-single-link">
         <UiSidebar title="Blog" />
     </NuxtLink>
+
     <div class="blog-post-single">
         <ContentDoc v-slot="{ doc }">
             <article class="blog-post-single-content">
@@ -23,6 +24,7 @@
 
                     <ContentRendererMarkdown :value="doc" class="md" />
                 </ContentRenderer>
+
                 <div class="blog-post-single-share">
                     <BlogShareTwitter :title="doc.title" />
                     <BlogShareLinkedin :title="doc.title" :description="doc.description" />

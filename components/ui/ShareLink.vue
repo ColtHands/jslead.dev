@@ -21,6 +21,15 @@ const props = defineProps<Props>()
 </script>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
+a
+    display: flex
+    gap: 5px
+    align-items: center
+    &:hover
+        color: variables.$text-hover
+        fill: variables.$text-hover
     i
         margin-right: 5px
 </style>
