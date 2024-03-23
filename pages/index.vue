@@ -14,7 +14,7 @@
                 Maybe you disagree with what I have to say, I'd love to hear your opinion.
             </div>
         </section>
-        <IndexRightBlogSection class="right-section" />
+        <IndexRightBlogSection />
     </main>
 </template>
 
@@ -28,8 +28,6 @@ main
     @media screen and (max-width: variables.$tablet-resolution)
         overflow-y: scroll
         grid-template-columns: 1fr
-        .section4
-            display: none
         section
             border: none !important
             div.intro

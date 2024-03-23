@@ -56,6 +56,7 @@ section
         overflow-y: auto
         overflow-x: hidden
         padding: 20px
-        height: calc(85vh - 6.25rem)
         scrollbar-width: 10px
+        @media screen and (min-width: variables.$tablet-resolution)
+            height: calc(100vh - 6.25rem)
 </style>
