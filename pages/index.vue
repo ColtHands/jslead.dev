@@ -37,20 +37,23 @@ main
                     margin-top: 20px
     section
         border: 1px solid variables.$white
-        padding: 10px 20px
+        padding: 20px
         &.left-section
             display: flex
             flex-direction: column
             height: 100%
-    h1, h2
-        margin: 0
-        font-weight: 700
-        letter-spacing: -1.8px
-        text-transform: uppercase
-    h1
-        line-height: 3rem
-        font-size: clamp(2rem, 4.5vw, 3.75rem)
-        margin-left: 0
-    h2
-        font-size: clamp(1.5rem, 3vw, 1.875rem)
+        h1, h2
+            margin: 0
+            font-weight: 700
+            letter-spacing: -1.8px
+            text-transform: uppercase
+        h1
+            line-height: 3rem
+            font-size: clamp(2rem, 4.5vw, 3.75rem)
+            margin-left: 0
+        h2
+            font-size: clamp(1.5rem, 3vw, 1.875rem)
+            margin-top: 10px
+        div.intro
+            margin-top: 5px
 </style>
