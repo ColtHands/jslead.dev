@@ -46,14 +46,13 @@ section
         position: absolute
         background: variables.$dark-orange
         width: calc(100% - 5px)
-        height: calc(100% - 10px)
+        height: 100%
         left: 10px
         top: 10px
         z-index: 1
         border: 2px solid variables.$gray
         border-radius: 3px
         @media screen and (max-width: variables.$tablet-resolution)
-            height: calc(100% - 34px)
     .section-content
         overflow-y: auto
         overflow-x: hidden
