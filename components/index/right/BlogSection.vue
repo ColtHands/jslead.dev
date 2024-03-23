@@ -23,7 +23,7 @@ const articles = await useBlogArticles()
 section
     margin-right: 20px
     margin-left: 10px
-    height: calc(100vh - 105px)
+    height: calc(100vh - 100px)
     position: relative
     @media screen and (max-width: variables.$tablet-resolution)
         overflow: visible
@@ -41,22 +41,24 @@ section
         border-radius: 3px
         position: relative
         @media screen and (min-width: variables.$tablet-resolution)
-            height: calc(100vh - 105px)
+            height: calc(100vh - 100px)
     .section-footprint
         position: absolute
         background: variables.$dark-orange
         width: calc(100% - 5px)
-        height: 100%
+        height: calc(100% - 10px)
         left: 10px
         top: 10px
         z-index: 1
         border: 2px solid variables.$gray
         border-radius: 3px
+        @media screen and (max-width: variables.$tablet-resolution)
+            height: calc(100% - 34px)
     .section-content
         overflow-y: auto
         overflow-x: hidden
         padding: 20px
         scrollbar-width: 10px
         @media screen and (min-width: variables.$tablet-resolution)
-            height: calc(100vh - 6.25rem)
+            height: calc(100vh - 100px)
 </style>
