@@ -32,12 +32,12 @@ button
         width: calc(100% + 2px)
         height: calc(100% + 2px)
         position: absolute
-        top: 3px
+        top: 2.5px
         left: 3px
         border-right: 1.5px solid variables.$white
         border-bottom: 1.5px solid variables.$white
-        border-radius: 2px
-        border-bottom-right-radius: 3px
+        border-radius: 3px
+        border-bottom-left-radius: 2px
     &:active
         transform: translate(4px, 4px)
         box-shadow: 0px 0px 0px 0px variables.$gray
