@@ -48,7 +48,6 @@ header#header
     display: flex
     align-items: center
     justify-content: space-between
-    border-bottom: 1px solid variables.$white
     box-sizing: border-box
     #menu
         display: flex
@@ -61,7 +60,7 @@ header#header
             font-weight: 500
             &:hover
                 svg
-                    fill: variables.$text-hover
+                    fill: variables.$dark-orange
     @media screen and (max-width: 480px)
         #portfolio-link
             display: none

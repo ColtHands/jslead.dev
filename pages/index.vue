@@ -32,13 +32,11 @@ main
             display: none
         section
             border: none !important
-            &.section1
-                div.intro
-                    margin-top: 20px
+            div.intro
+                margin-top: 20px
     section
-        border: 1px solid variables.$white
-        padding: 20px
         &.left-section
+            padding: 20px
             display: flex
             flex-direction: column
             height: 100%

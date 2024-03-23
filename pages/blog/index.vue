@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- TODO Redesign this section to resemble blog section on /index page -->
         <UiSidebar title="Blog" class="blog__sidebar" />
         <div class="blog__posts">
             <div v-for="(post, i) in articles" :key="i" class="blog__posts__post">

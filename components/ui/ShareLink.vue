@@ -28,8 +28,8 @@ a
     gap: 5px
     align-items: center
     &:hover
-        color: variables.$text-hover
-        fill: variables.$text-hover
+        color: variables.$dark-orange
+        fill: variables.$dark-orange
     i
         margin-right: 5px
 </style>
