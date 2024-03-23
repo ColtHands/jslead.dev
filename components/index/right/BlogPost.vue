@@ -4,9 +4,11 @@
             <h3>{{props.post.title}}</h3>
         </NuxtLink>
         <p>{{props.post.description}}</p>
-        <NuxtLink :to="props.post._path" style="display: inline-block;">
-            <UiButton text="go to post" />
-        </NuxtLink>
+        <div>
+            <NuxtLink :to="props.post._path">
+                <UiButton text="go to post" />
+            </NuxtLink>
+        </div>
     </div>
 </template>
 
@@ -33,9 +35,13 @@ const props = defineProps<Props>()
         font-weight: 700
     p
         @include variables.blogText
-    p, a
         margin: 10px 0
+    a
         text-decoration: none
+        display: inline-block
+    div
+        margin: 10px 0
+        text-align: right
     button
         margin-left: auto
         display: block
