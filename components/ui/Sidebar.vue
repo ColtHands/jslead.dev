@@ -16,7 +16,6 @@ defineProps<{ title: string }>()
     vertical-align: top
     position: relative
     width: variables.$sidebar-width
-    border-right: 1px solid variables.$white
     background: variables.$background-color
     height: variables.$body-height-minus-header
     p

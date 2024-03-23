@@ -61,6 +61,7 @@ import { formatDate } from '@/utils/contentUtils'
     &-content
         margin: 0 auto
         max-width: 70ch
+        font-size: 1.125rem
         @media screen and (max-width: 1024px)
             padding: 0 20px
             width: 800px
@@ -76,8 +77,9 @@ import { formatDate } from '@/utils/contentUtils'
         .date
             font-style: italic
             font-weight: 500
-            color: #333
+            color: gray
             margin: 10px 0
+            font-size: 0.8em
         .contents
             background-color: #333
             padding: 10px
@@ -94,7 +96,7 @@ import { formatDate } from '@/utils/contentUtils'
                 list-style: inside
                 border: 1px solid #333
                 li
-                    line-height: 1.5rem
+                    line-height: 1.5em
                     a
                         color: #aeaeae
                         text-decoration: none
@@ -124,26 +126,23 @@ import { formatDate } from '@/utils/contentUtils'
         margin-left: 20px
     h2
         font-weight: 600
-        font-size: 2rem
+        font-size: 2em
         margin: 20px 0 10px
     h3
         font-weight: 600
-        font-size: 1.5rem
+        font-size: 1.5em
         margin: 20px 0 10px
-    code
+    code, pre
         background-color: variables.$gray
         border-radius: 5px
-        padding: 2px 5px
         display: inline-block
+        font-size: 0.9em
+    code
+        padding: 2px 5px
         color: variables.$orange
         margin: 1px 0
     pre
-        background-color: variables.$gray
-        border-radius: 5px
         padding: 10px
-        display: inline-block
-        code
-            background-color: variables.$gray
     table
         margin: 0 auto
     table, th, td

@@ -23,7 +23,7 @@ const articles = await useBlogArticles()
             display: none
     &__posts
         @media screen and (max-width: variables.$tablet-resolution)
-            padding: 1rem
+            padding: 1em
         margin: 0
         width: auto
         box-sizing: content-box-box
@@ -31,7 +31,7 @@ const articles = await useBlogArticles()
         overflow-y: scroll
     &__posts__post
         @include variables.blogText
-        padding: 1rem 0
+        padding: 1em 0
         max-width: 70ch
         margin: 0 auto
         border-bottom: 1.5px solid variables.$white

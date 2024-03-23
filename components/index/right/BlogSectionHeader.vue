@@ -7,6 +7,8 @@
 </template>
 
 <style lang="sass" scoped>
+@use '~~/styles/variables'
+
 h2
     font-weight: 700
     text-transform: uppercase
@@ -18,4 +20,5 @@ h2
     height: 4.4rem
     display: flex
     align-items: center
+    border-bottom: 1px solid variables.$white
 </style>
