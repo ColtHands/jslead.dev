@@ -10,15 +10,6 @@
 @use '~~/styles/variables'
 
 h2
-    font-weight: 700
-    text-transform: uppercase
     font-size: 2.5rem
-    display: inline-block
-    width: 100%
-    padding: 0 20px
-    background: gray
-    height: 4.4rem
-    display: flex
-    align-items: center
-    border-bottom: 1px solid variables.$white
+    text-transform: uppercase
 </style>

@@ -7,28 +7,32 @@
         <ContentDoc v-slot="{ doc }">
             <article class="blog-post-single-content">
                 <ContentRenderer :value="doc">
-                    <header>
-                        <h1>{{doc.title}}</h1>
-                    </header>
+                    <UiContentCard>
+                        <template #header>
+                            <h1>{{doc.title}}</h1>
+                        </template>
 
-                    <p class="date">{{formatDate(doc.date)}}</p>
+                        <template #default>
+                            <p class="date">{{formatDate(doc.date)}}</p>
 
-                    <div class="contents">
-                        <p>Contents</p>
-                        <ul>
-                            <li v-for="(e,i) in doc.body.toc.links" :key="i">
-                                <a :href="`#${e.id}`">{{e.text}}</a>
-                            </li>
-                        </ul>
-                    </div>
+                            <div class="contents">
+                                <p>Contents</p>
+                                <ul>
+                                    <li v-for="(e,i) in doc.body.toc.links" :key="i">
+                                        <a :href="`#${e.id}`">{{e.text}}</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-                    <ContentRendererMarkdown :value="doc" class="md" />
+                            <ContentRendererMarkdown :value="doc" class="md" />
+
+                            <div class="blog-post-single-share">
+                                <BlogShareTwitter :title="doc.title" />
+                                <BlogShareLinkedin :title="doc.title" :description="doc.description" />
+                            </div>
+                        </template>
+                    </UiContentCard>
                 </ContentRenderer>
-
-                <div class="blog-post-single-share">
-                    <BlogShareTwitter :title="doc.title" />
-                    <BlogShareLinkedin :title="doc.title" :description="doc.description" />
-                </div>
             </article>
         </ContentDoc>
     </div>
@@ -60,7 +64,7 @@ import { formatDate } from '@/utils/contentUtils'
             display: none
     &-content
         margin: 0 auto
-        max-width: 70ch
+        max-width: calc(70ch + 200px)
         font-size: 1.125rem
         @media screen and (max-width: 1024px)
             padding: 0 20px
@@ -69,9 +73,8 @@ import { formatDate } from '@/utils/contentUtils'
             padding: 0 20px
             width: calc(100% - 40px)
         h1
-            font-size: 44px
+            font-size: 2rem
             font-weight: 600
-            margin: 30px 0 0
             letter-spacing: -1px
             line-height: 3rem
         .date

@@ -4,6 +4,7 @@
         <UiSidebar title="Blog" class="blog__sidebar" />
         <div class="blog__posts">
             <div v-for="(post, i) in articles" :key="i" class="blog__posts__post">
+                <hr v-if="i > 0" />
                 <IndexRightBlogPost :post="post" />
             </div>
         </div>
@@ -16,6 +17,10 @@ const articles = await useBlogArticles()
 
 <style lang="sass" scoped>
 @use '~~/styles/variables'
+
+hr
+    border: 1px solid variables.$white
+    margin-top: 0
 
 .blog
     &__sidebar
@@ -34,8 +39,4 @@ const articles = await useBlogArticles()
         padding: 1em 0
         max-width: 70ch
         margin: 0 auto
-        border-bottom: 1.5px solid variables.$white
-    hr
-        border: 1px solid variables.$white
-        margin-top: 0
 </style>
