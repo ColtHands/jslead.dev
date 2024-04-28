@@ -57,6 +57,7 @@ $spacing: 20px
         border-bottom: 1px solid variables.$white
         white-space: nowrap
         overflow: scroll
+        @include variables.hideScrollbar
     .content
         overflow-y: auto
         overflow-x: hidden
