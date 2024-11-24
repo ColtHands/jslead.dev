@@ -5,7 +5,7 @@
         </NuxtLink>
         <div id="menu">
             <NuxtLink
-                v-if="shouldDisplayPortfolioLink"
+                v-if="shouldDisplayPortfolioFromQuery"
                 id="portfolio-link"
                 target="_blank"
                 to="https://www.notion.so/colthands/40e6bfd11ad34fabaa870fed6d77fc0e?v=6562fb2100234cbaaa208af798be2c70"
@@ -29,10 +29,8 @@
 </template>
 
 <script setup lang="ts">
-const { $posthogClient } = useNuxtApp()
 const route = useRoute()
 const shouldDisplayPortfolioFromQuery = route.query.displayPortfolio === 'true'
-const shouldDisplayPortfolioLink = shouldDisplayPortfolioFromQuery ?? $posthogClient?.isFeatureEnabled('displayPortfolioLink')
 </script>
 
 <style lang="sass" scoped>
