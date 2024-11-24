@@ -1,6 +1,6 @@
 <template>
     <h2>
-        <NuxtLink to="/blog">
+        <NuxtLink to="/">
             <UiFlippingText text="Blog" />
         </NuxtLink>
     </h2>

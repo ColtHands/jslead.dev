@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink to="/blog" class="blog-post-single-link">
+    <NuxtLink to="/" class="blog-post-single-link">
         <UiSidebar title="Blog" />
     </NuxtLink>
 

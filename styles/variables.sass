@@ -1,3 +1,5 @@
+@use "sass:color"
+
 $header-height: 5rem
 $sidebar-width: 5rem
 
@@ -7,7 +9,7 @@ $background-color: #A7BAB6
 $gray: #262625
 $orange: #f08222
 $white: #B9D4CF
-$dark-orange: darken($orange, 20%)
+$dark-orange: color.adjust($orange, $lightness: -20%)
 
 $body-height-minus-header: calc(100dvh - #{$header-height})
 

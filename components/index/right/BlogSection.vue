@@ -21,15 +21,16 @@ const articles = await useBlogArticles()
 </script>
 
 <style lang="sass" scoped>
+@use 'sass:math'
 @use '~~/styles/variables'
 
 $spacing: 20px
 
 section
     padding-right: $spacing
-    padding-left: $spacing / 2
+    padding-left: math.div($spacing, 2)
     margin-right: $spacing
-    margin-left: $spacing / 2
+    margin-left: math.div($spacing, 2)
     position: relative
     @media screen and (max-width: variables.$tablet-resolution)
         overflow: visible
