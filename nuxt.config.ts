@@ -3,7 +3,8 @@ const websiteUrl = 'https://colthands.dev'
 export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
-        '@nuxthq/studio'
+        '@nuxthq/studio',
+        '@nuxt/fonts'
     ],
     devtools: { enabled: false },
     app: {
