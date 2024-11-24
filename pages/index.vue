@@ -25,16 +25,9 @@ main
     display: grid
     grid-template-columns: repeat(2, 1fr)
     height: variables.$body-height-minus-header
-    @media screen and (max-width: variables.$tablet-resolution)
-        overflow-y: scroll
-        grid-template-columns: 1fr
-        section
-            border: none !important
-            div.intro
-                margin-top: 20px
     section
         &.left-section
-            padding: 20px
+            padding: 1.25rem
             display: flex
             flex-direction: column
             height: 100%
@@ -49,7 +42,21 @@ main
             margin-left: 0
         h2
             font-size: clamp(1.5rem, 3vw, 1.875rem)
-            margin-top: 10px
+            margin-top: 0.65rem
         div.intro
-            margin-top: 5px
+            margin-top: 0.4rem
+    @media screen and (max-width: variables.$tablet-resolution)
+        overflow-y: scroll
+        grid-template-columns: 1fr
+        section
+            border: none !important
+            div.intro
+                margin-top: 1.3rem
+            h2
+                margin-top: 0
+                font-weight: 500
+                letter-spacing: -1.2px
+                font-size: clamp(1.25rem, 3vw, 1.5rem)
+            div.intro
+                margin-top: 0.65rem
 </style>
