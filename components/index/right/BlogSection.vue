@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-const articles = await useBlogArticles()
+const { data: articles } = await useBlogArticles()
 </script>
 
 <style lang="sass" scoped>
