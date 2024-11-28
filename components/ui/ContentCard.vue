@@ -41,12 +41,13 @@ $spacing: 20px
         background: variables.$dark-orange
         width: calc(100% - 5px)
         height: 100%
+        @media screen and (max-width: variables.$tablet-resolution)
+            height: calc(100% - 5px)
         left: 10px
         top: 10px
         z-index: 1
         border: 2px solid variables.$gray
         border-radius: 3px
-        @media screen and (max-width: variables.$tablet-resolution)
     .header
         width: calc(100% - 30px)
         padding: 0 $spacing
@@ -60,10 +61,12 @@ $spacing: 20px
         @include variables.hideScrollbar
     .content
         overflow-y: auto
-        overflow-x: hidden
         padding: $spacing
         scrollbar-width: 10px
         height: 100%
+        padding-bottom: 0.5rem
+        @media screen and (max-width: variables.$tablet-resolution)
+            padding-bottom: 0.5rem
         @media screen and (min-width: variables.$tablet-resolution)
             height: calc(100vh - 200px)
 </style>

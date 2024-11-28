@@ -11,6 +11,16 @@ export default defineNuxtConfig({
             mode: 'default'
         }
     },
+    // vite: {
+    //     css: {
+    //         preprocessorOptions: {
+    //             scss: {
+    //                 quietDeps: true,
+    //                 api: 'modern-compiler'
+    //             }
+    //         }
+    //     }
+    // },
     typescript: {
         strict: true
     },
@@ -20,7 +30,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             posthogPublicKey: 'phc_h4lVplILWIY7UlOfGIp9vjHlwHOA1697FEuiPAuwc2L',
-            posthogHost: 'https://app.posthog.com',
+            posthogHost: 'https://app.posthog.com'
         }
     },
     content: {

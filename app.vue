@@ -33,8 +33,8 @@ html, body
     font-family: 'Hanken Grotesk', sans-serif
     background: variables.$background-color
     color: variables.$gray
-    overflow: hidden
-
+    @media screen and (min-width: variables.$tablet-resolution)
+        overflow: hidden
 h1,
 h2,
 h3,

@@ -49,9 +49,10 @@ import { formatDate } from '@/utils/contentUtils'
     display: flex
     flex-direction: column
     justify-content: space-between
-    overflow-x: hidden
-    overflow-y: auto
     height: variables.$body-height-minus-header
+    @media screen and (min-width: variables.$tablet-resolution)
+        overflow-y: auto
+        overflow-x: hidden
     &-share
         border-top: 3px solid variables.$orange
         padding: 10px
@@ -70,7 +71,7 @@ import { formatDate } from '@/utils/contentUtils'
             padding: 0 20px
             width: 800px
         @media screen and (max-width: variables.$tablet-resolution)
-            padding: 0 20px
+            padding: 0 20px 20px 0
             width: calc(100% - 40px)
         h1
             font-size: 2rem
@@ -81,7 +82,7 @@ import { formatDate } from '@/utils/contentUtils'
             font-style: italic
             font-weight: 500
             color: gray
-            margin: 10px 0
+            margin: 0
             font-size: 0.8em
         .contents
             background-color: #333
