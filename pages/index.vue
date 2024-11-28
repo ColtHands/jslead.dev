@@ -5,18 +5,33 @@
                 <UiFlippingText text="Aleksei &nbsp; Karpenko" />
             </h1>
             <h2>
-                <UiFlippingText text="Fullstack &nbsp; JavaScript &nbsp; Engineer" />
+                <UiFlippingText text="FullStack &nbsp; TypeScript &nbsp; Engineer" />
             </h2>
             <div class="intro">
-                <b>Hey there</b>.
-                I've created this website to capture my thoughts and display my opinions to the public.
-                <br>
-                Maybe you disagree with what I have to say, I'd love to hear your opinion.
+                <p>
+                    <b>Hey there</b>.
+                    I've created this website to capture my thoughts and display my opinions to the public.
+                </p>
+                <p>
+                    <b>If you're a recruiter.</b>
+                    You can message me on my <NuxtLink :to="myLinkedInUrl" target="_blank">LinkedIn</NuxtLink>.
+                </p>
+                <p>
+                    <b>If you're a developer.</b>
+                    You can message me on <NuxtLink :to="myTwitterUrl" target="_blank">Twitter</NuxtLink>.
+                </p>
             </div>
         </section>
         <IndexRightBlogSection />
     </main>
 </template>
+
+<script setup lang="ts">
+const {
+    myLinkedInUrl,
+    myTwitterUrl,
+} = useAppConfig()
+</script>
 
 <style lang="sass" scoped>
 @use '~~/styles/variables'

@@ -3,6 +3,7 @@
         <NuxtLink to="/" aria-label="Main page link logo">
             <UiHeaderLogo />
         </NuxtLink>
+
         <div id="menu">
             <NuxtLink
                 v-if="shouldDisplayPortfolioFromQuery"
@@ -12,16 +13,20 @@
             >
                 Portfolio
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://twitter.com/JavaScriptLead" aria-label="Twitter link icon">
+
+            <NuxtLink target="_blank" :to="myTwitterUrl" aria-label="Twitter link icon">
                 <IconXTwitter />
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://github.com/ColtHands" aria-label="Github link icon">
+
+            <NuxtLink target="_blank" :to="myGitHubUrl" aria-label="Github link icon">
                 <IconGithub />
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://www.linkedin.com/in/aleksey-karpenko/" aria-label="Linkedin link icon">
+
+            <NuxtLink target="_blank" :to="myLinkedInUrl" aria-label="Linkedin link icon">
                 <IconLinkedIn />
             </NuxtLink>
-            <NuxtLink target="_blank" to="https://www.npmjs.com/~coldhands" aria-label="NPM link icon">
+
+            <NuxtLink target="_blank" :to="myNpmUrl" aria-label="NPM link icon">
                 <IconNpm />
             </NuxtLink>
         </div>
@@ -31,6 +36,12 @@
 <script setup lang="ts">
 const route = useRoute()
 const shouldDisplayPortfolioFromQuery = route.query.displayPortfolio === 'true'
+const {
+    myTwitterUrl,
+    myGitHubUrl,
+    myLinkedInUrl,
+    myNpmUrl
+} = useAppConfig()
 </script>
 
 <style lang="sass" scoped>
