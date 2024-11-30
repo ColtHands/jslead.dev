@@ -1,3 +1,5 @@
+import TerserPlugin from 'terser-webpack-plugin'
+
 export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
@@ -21,6 +23,31 @@ export default defineNuxtConfig({
     //         }
     //     }
     // },
+    webpack: {
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        compress: {
+                            drop_console: true
+                        }
+                    }
+                })
+            ],
+            splitChunks: {
+                chunks: 'all',
+                automaticNameDelimiter: '.',
+                cacheGroups: {
+                    vendors: {
+                        name: 'vendors',
+                        test: /[\\/]node_modules[\\/]/,
+                        priority: -10
+                    }
+                }
+            }
+        }
+    },
     typescript: {
         strict: true
     },
