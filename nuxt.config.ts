@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import TerserPlugin from 'terser-webpack-plugin'
 
 export default defineNuxtConfig({
@@ -13,16 +14,6 @@ export default defineNuxtConfig({
             mode: 'default'
         }
     },
-    // vite: {
-    //     css: {
-    //         preprocessorOptions: {
-    //             scss: {
-    //                 quietDeps: true,
-    //                 api: 'modern-compiler'
-    //             }
-    //         }
-    //     }
-    // },
     webpack: {
         optimization: {
             minimize: true,
@@ -42,7 +33,9 @@ export default defineNuxtConfig({
                     vendors: {
                         name: 'vendors',
                         test: /[\\/]node_modules[\\/]/,
-                        priority: -10
+                        priority: -10,
+                        enforce: true,
+                        reuseExistingChunk: true
                     }
                 }
             }
