@@ -28,5 +28,6 @@
     "sitemap": "^7.1.2",
     "typescript": "latest",
     "vitest": "^2.1.5"
-  }
+  },
+  "packageManager": "pnpm@8.2.0+sha1.41bf53189f36dd17c23e98d6b8f9903f5ccfc200"
 }

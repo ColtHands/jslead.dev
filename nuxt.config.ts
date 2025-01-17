@@ -14,6 +14,15 @@ export default defineNuxtConfig({
             mode: 'default'
         }
     },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                sass: {
+                    api: 'modern-compiler'
+                }
+            }
+        }
+    },
     webpack: {
         optimization: {
             minimize: true,
