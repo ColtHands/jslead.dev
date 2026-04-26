@@ -1,6 +1,6 @@
 ---
 title: Soft Skills To Pass Your Coding Interview
-date: 02.12.2023
+createdAt: 02.12.2023
 visible: true
 ---
 

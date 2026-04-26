@@ -1,6 +1,6 @@
 ---
 title: HTML ARIA role attribute - a convenient Testing Library query table
-date: 03.02.2023
+createdAt: 03.02.2023
 visible: true
 ---
 

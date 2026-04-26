@@ -1,10 +1,10 @@
 export type BlogPost = {
-    date: string,
+    createdAt: string,
+    updatedAt?: string,
     title: string,
     _path?: string,
     description?: string,
 }
-
 
 /**
  * @param {date} string - Date string in dd.mm.yyyy format

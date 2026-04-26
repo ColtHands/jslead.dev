@@ -1,6 +1,6 @@
 ---
 title: The curious case of Agents in AI, how to Auto GPT
-date: 04.17.2023
+createdAt: 04.17.2023
 visible: true
 ---
 

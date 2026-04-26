@@ -5,9 +5,12 @@ export default function useBlogArticles() {
         queryContent<BlogPost>('/blog/articles')
             .where({ visible: true })
             .find()
-            .then(articles => articles.sort((a, b) =>
-                new Date(a.date) > new Date(b.date) ? -1 : 1
-            ))
+            .then(articles => articles.sort((a, b) => {
+                const dateA = new Date(a.updatedAt || a.createdAt)
+                const dateB = new Date(b.updatedAt || b.createdAt)
+
+                return dateA > dateB ? -1 : 1
+            }))
     )
 }
 

@@ -13,7 +13,7 @@
                         </template>
 
                         <template #default>
-                            <p class="date">{{formatDate(doc.date)}}</p>
+                            <p class="date">Created at - {{formatDate(doc.createdAt)}} Updated at - {{formatDate(doc.updatedAt)}}</p>
 
                             <div class="contents">
                                 <p>Contents</p>
@@ -85,20 +85,20 @@ import { formatDate } from '@/utils/contentUtils'
             margin: 0
             font-size: 0.8em
         .contents
-            background-color: #333
-            padding: 10px
+            background-color: lighten(#333, 5%)
+            padding: 10px 10px 5px
             display: inline-block
             color: #bebebe
             border-radius: 5px
             margin: 10px 0
             p
-                text-align: center
                 color: #aeaeae
                 font-weight: 600
                 font-size: 18px
             ul
                 list-style: inside
-                border: 1px solid #333
+                font-size: 0.8em
+                font-weight: 500
                 li
                     line-height: 1.5em
                     a
@@ -106,7 +106,7 @@ import { formatDate } from '@/utils/contentUtils'
                         text-decoration: none
                     &::marker
                         content: "# "
-                        color: #555
+                        color: lighten(#555, 5%)
 
 :deep(.md)
     a

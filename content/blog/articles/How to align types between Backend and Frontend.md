@@ -1,6 +1,6 @@
 ---
 title: How to align types between Backend and Frontend Typescript applications
-date: 07.30.2023
+createdAt: 07.30.2023
 visible: true
 ---
 
