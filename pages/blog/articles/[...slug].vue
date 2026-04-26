@@ -13,7 +13,10 @@
                         </template>
 
                         <template #default>
-                            <p class="date">Created at - {{formatDate(doc.createdAt)}} Updated at - {{formatDate(doc.updatedAt)}}</p>
+                            <p class="date">
+                                <span>Created at - {{formatDate(doc.createdAt)}}</span>
+                                <span v-if="doc.updatedAt">Updated at - {{formatDate(doc.updatedAt)}}</span>
+                            </p>
 
                             <div class="contents">
                                 <p>Contents</p>
