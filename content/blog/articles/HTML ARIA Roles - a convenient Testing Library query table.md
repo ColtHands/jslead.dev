@@ -1,7 +1,6 @@
 ---
 title: HTML ARIA role attribute - a convenient Testing Library query table
 createdAt: 03.02.2023
-visible: true
 ---
 
 It's March 2023 and there is a good trend going around with using `testing-library` and its `...ByRole` query.

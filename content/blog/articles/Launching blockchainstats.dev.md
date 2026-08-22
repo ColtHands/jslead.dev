@@ -1,7 +1,6 @@
 ---
 title: Launching blockchainstats.dev
 createdAt: 01.24.2024
-visible: true
 ---
 
 [Blockchainstats.dev](https://blockchainstats.dev) - a project that I've been working for quite some time.
